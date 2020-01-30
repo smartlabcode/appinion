@@ -1,0 +1,111 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use DB;
+use Auth;
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
+use App\User;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+
+class QuestionController extends Controller
+{
+    public function addQuestion(Request $data){
+
+        $prezentacijaid = $data->_key;
+
+        $pitanje = $data->question;
+        $odg1 = $data->odgovor1;
+        $odg2 = $data->odgovor2;
+        $odg3 = $data->odgovor3;
+        $odg4 = $data->odgovor4;
+        $odg[] = [$odg1, $odg2, $odg3, $odg4];
+        $pitanjeType = $data->type;
+
+        $i = 0;
+
+        if($odg3 == null)
+            {$odg3 = ' ';}
+        if($odg4 == null)
+            {$odg4 = ' ';} 
+
+        //popunjavanje tabele 'pitanja'
+        $pitanje = DB::table('pitanja')
+            ->insertGetId(
+                [
+                'id_prezentacije' => $prezentacijaid,
+                'pitanje' => $pitanje,
+                'odgovor1' => $odg1,
+                'odgovor2' => $odg2,
+                'odgovor3' => $odg3,
+                'odgovor4' => $odg4,
+                ]
+            );
+        
+        return redirect('/');
+    }
+
+    public function deleteQuestion(Request $data, $useremail, $idpitanja){
+
+
+        if(Auth::user() && Auth::user()->email == $useremail){
+            DB::table('pitanja')->where('id', $idpitanja)->delete();
+            return redirect('/');
+        }
+        
+        return 'No access error';
+        
+    }
+
+    public function editQuestionfour(Request $data, $questionid, $pitanje, $odg1, $odg2, $odg3, $odg4){
+
+        $updateDetails = [
+            'pitanje' => $pitanje,
+            'odgovor1' => $odg1,
+            'odgovor2' => $odg2,
+            'odgovor3' => $odg3,
+            'odgovor4' => $odg4
+        ];
+
+        DB::table('pitanja')
+            ->where('id', $questionid)
+            ->update($updateDetails);
+
+        return redirect('/');
+    }
+
+    public function editQuestionthree(Request $data, $questionid, $pitanje, $odg1, $odg2, $odg3){
+
+        $updateDetails = [
+            'pitanje' => $pitanje,
+            'odgovor1' => $odg1,
+            'odgovor2' => $odg2,
+            'odgovor3' => $odg3
+        ];
+
+        DB::table('pitanja')
+            ->where('id', $questionid)
+            ->update($updateDetails);
+
+        return redirect('/');
+    }
+
+    public function editQuestiontwo(Request $data, $questionid, $pitanje, $odg1, $odg2){
+
+        $updateDetails = [
+            'pitanje' => $pitanje,
+            'odgovor1' => $odg1,
+            'odgovor2' => $odg2
+        ];
+
+        DB::table('pitanja')
+            ->where('id', $questionid)
+            ->update($updateDetails);
+
+        return redirect('/');
+    }
+}

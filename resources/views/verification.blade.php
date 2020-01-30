@@ -1,0 +1,1 @@
+<p>Please verify your email</p>
