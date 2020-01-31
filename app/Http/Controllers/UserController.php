@@ -32,6 +32,31 @@ class UserController extends Controller
             $user->save();
         }
 
+        if(isset($request->name) && $request->name!=Auth::User()->name){
+            $user = Auth::user();
+            $user->name=$request->name;
+            $user->save();
+        }
+
+        if(isset($request->lastname) && $request->lastname!=Auth::User()->last_name){
+            $user = Auth::user();
+            $user->last_name=$request->lastname;
+            $user->save();
+        }
+
+        if(isset($request->email) && $request->email!=Auth::User()->email){
+            $user = Auth::user();
+            $user->email=$request->email;
+            $user->save();
+        }
+
+        if(isset($request->password) && $request->password!=Auth::User()->password){
+            $user = Auth::user();
+            $user->password=Hash::make($request->password);
+            $user->save();
+        }
+
+
         return view('profile', array('user'=>Auth::user()));
 
 

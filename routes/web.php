@@ -49,7 +49,10 @@ Route::post('/profile', 'UserController@updateAvatar');
 Route::post('/addpresentation', 'DashboardController@addPresentation');
 
 //Brisanje prezentacije
-Route::get('//presentationdelete/{idprezentacije}', 'DashboardController@deletePresentation');
+Route::get('/presentationdelete/{idprezentacije}', 'DashboardController@deletePresentation');
+
+//Gledanje prezentacije
+Route::get('/presentation/{idprezentacije}', 'PresentationController@showPresentation');
 
 //Dodavanje pitanja
 Route::post('/addQuestion', 'QuestionController@addQuestion');
@@ -58,8 +61,8 @@ Route::post('/addQuestion', 'QuestionController@addQuestion');
 Route::get('/pitanje/{idprezentacije}/{idpitanja}', 'ShowQuestionController@showQuestionPage');
 
 //Upravljanje pitanja i odgovora
-Route::get('/questiondelete/{emailkorisnika}/{idpitanja}', 'QuestionController@deleteQuestion');
+Route::get('/questiondelete/{presentationid}/{emailkorisnika}/{idpitanja}', 'QuestionController@deleteQuestion');
 
-Route::post('/questioneditfour/{pitanjeid}/{pitanje}/{odg1}/{odg2}/{odg3}/{odg4}', 'QuestionController@editQuestionfour');
-Route::post('/questioneditthree/{pitanjeid}/{pitanje}/{odg1}/{odg2}/{odg3}', 'QuestionController@editQuestionthree');
-Route::post('/questionedittwo/{pitanjeid}/{pitanje}/{odg1}/{odg2}/', 'QuestionController@editQuestiontwo');
+Route::get('/questioneditfour/{pitanjeid}/{pitanje}/{odg1}/{odg2}/{odg3}/{odg4}', 'QuestionController@editQuestionfour');
+Route::get('/questioneditthree/{pitanjeid}/{pitanje}/{odg1}/{odg2}/{odg3}', 'QuestionController@editQuestionthree');
+Route::get('/questionedittwo/{pitanjeid}/{pitanje}/{odg1}/{odg2}/', 'QuestionController@editQuestiontwo');

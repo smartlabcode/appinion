@@ -1,5 +1,21 @@
-#pitanje-container{
+#prezentacije-container{
 
-    display: none;
+    display: grid;
+    margin: 10px auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    margin-bottom: 20px;
+}
 
+.prezentacija-container{
+    width: 350px;
+    background: grey;
+    display: inline;
+    color: whitesmoke;
+    border: 1px solid red;
+    margin: 10px auto;
+}
+
+.prezentacija-container:hover{
+    cursor: pointer;
 }

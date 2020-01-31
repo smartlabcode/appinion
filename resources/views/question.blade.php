@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard/dashboard.css') }}" >
     </head>
     <body>
-    
+    {{dd($data)}}
     <div id='page-container'>
         <div id='title-container'><h3>{{ $data[0]->pitanje }}</h3></div>
         
@@ -37,7 +37,8 @@
             </div>
             @endif
         </div>
-    
+    <a href="/pitanje/">Next</a>
+    <a href="/pitanje/{{$data['prezentacija']->gen_kod}}/{{$data['pitanja'][0]->id}}/" target='_blank'>Počni prezentaciju</a>
     
     </div>
     

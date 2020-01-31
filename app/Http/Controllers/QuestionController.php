@@ -46,15 +46,14 @@ class QuestionController extends Controller
                 ]
             );
         
-        return redirect('/');
+        return redirect('/presentation/'.$data->_key)->with("refresh", true);
     }
 
-    public function deleteQuestion(Request $data, $useremail, $idpitanja){
-
+    public function deleteQuestion(Request $data, $presentationid, $useremail, $idpitanja){
 
         if(Auth::user() && Auth::user()->email == $useremail){
             DB::table('pitanja')->where('id', $idpitanja)->delete();
-            return redirect('/');
+            return redirect('/presentation/'.$presentationid);
         }
         
         return 'No access error';
