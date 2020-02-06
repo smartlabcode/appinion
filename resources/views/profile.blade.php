@@ -15,3 +15,7 @@
     <input type='password' name='password' value='{{Auth::User()->password}}'><br>
     <input type='submit' value='Potvrdi'>
 </form>
+
+<div className='form-group'>
+    <button type='submit' className='form-control' id='submit' name='submit' onclick="location.href='/';" >Dashboard</button>
+</div>

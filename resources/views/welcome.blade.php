@@ -22,11 +22,6 @@
        
     </head>
     <body>
-    <script>
-        function editProfile(){
-            window.open('/profile', '_blank');
-        }
-    </script>
         @if(!Auth::user())
         <div id="auth-container"></div>
         <script src="/js/app.js"></script>
@@ -42,7 +37,7 @@
                 </div>
             </form>
             <div className='form-group'>
-                    <button type='submit' className='form-control' id='submit' name='submit' onclick='editProfile()' >Edit Profile</button>
+                    <button type='submit' className='form-control' id='submit' name='submit' onclick="location.href='/profile';" >Edit Profile</button>
             </div>
             <div id="dashboard-container"></div>
                 <script>

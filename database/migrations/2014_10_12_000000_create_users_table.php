@@ -60,6 +60,16 @@ class CreateUsersTable extends Migration
             $table->string('odgovor4');
 
         });
+
+        Schema::create('odgovori', function(Blueprint $table){
+
+            $table->bigIncrements('id');
+            $table->string('id_prezentacije');
+            $table->string('id_pitanja');
+            $table->string('id_korisnika');
+            $table->string('odgovor');
+
+        });
     }
 
     /**

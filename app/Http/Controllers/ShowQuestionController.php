@@ -14,14 +14,17 @@ use Illuminate\Http\Request;
 
 class ShowQuestionController extends Controller
 {
-    public function showQuestionPage(Request $request, $idprezentacije, $idpitanja){
+    public function showQuestionPage(Request $request, $idprezentacije, $i){
 
-        $data = DB::table('pitanja')->where('id', $idpitanja)->get();
-        if(Auth::user()){
-            return view('question')->with('data', $data);
+        $data = DB::table('pitanja')
+            ->where('id_prezentacije', $idprezentacije)
+            ->get();
+
+        if($i<count($data)){
+            return view('question')->with('data', $data)->with('i', $i)->with('idprezentacije', $idprezentacije);
         }
-
-        return view('/');
-        
+        else if($i == count($data)){
+            return view('question')->with('data', $data)->with('i', "end")->with('idprezentacije', $idprezentacije);
+        }
     }
 }

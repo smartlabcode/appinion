@@ -58,7 +58,7 @@ Route::get('/presentation/{idprezentacije}', 'PresentationController@showPresent
 Route::post('/addQuestion', 'QuestionController@addQuestion');
 
 //Preview pitanja i odgovora
-Route::get('/pitanje/{idprezentacije}/{idpitanja}', 'ShowQuestionController@showQuestionPage');
+Route::get('/pitanje/{idprezentacije}/{i}', 'ShowQuestionController@showQuestionPage');
 
 //Upravljanje pitanja i odgovora
 Route::get('/questiondelete/{presentationid}/{emailkorisnika}/{idpitanja}', 'QuestionController@deleteQuestion');

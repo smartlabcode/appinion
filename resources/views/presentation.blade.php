@@ -19,7 +19,25 @@
 <body>
 <h3>{{ $data['prezentacija']->ime_prezentacije }}</h3>
 <h5>Kod prezentacije: {{ $data['prezentacija']->gen_kod }} </h5>
-    <a href="/pitanje/{{$data['prezentacija']->gen_kod}}/{{$data['pitanja'][0]->id}}/" target='_blank'>Počni prezentaciju</a>
+<div className='form-group'>
+    <button type='submit' className='form-control' id='submit' name='submit' onclick="location.href='/';" >Dashboard</button>
+</div>
+
+<script>
+
+function openPresentation(link, idpitanja){
+
+    var i = 0;
+
+    location.href='/pitanje/'+link+'/'+i;
+}
+
+</script>
+
+<div className='form-group'>
+    <button type='submit' className='form-control' id='submit' name='submit' onclick="openPresentation( {{ $data['prezentacija']->gen_kod }} )" >Pusti prezentaciju</button>
+</div>
+
     <div id='pitananja-div-container'>
     <table id='pitanja-table-container'>
         <tr>

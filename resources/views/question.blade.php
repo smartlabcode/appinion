@@ -14,32 +14,34 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard/dashboard.css') }}" >
     </head>
     <body>
-    {{dd($data)}}
+
     <div id='page-container'>
-        <div id='title-container'><h3>{{ $data[0]->pitanje }}</h3></div>
+        <div id='title-container'><h3>{{ $data[$i]->pitanje }}</h3></div>
         
-        <div id='pitanje-container'><p id='pitanje'>{{ $data[0]->pitanje }}</p></div>
+        <div id='pitanje-container'><p id='pitanje'>{{ $data[$i]->pitanje }}</p></div>
         <div id='odgovor-container>'>
             <div class='odgovor-class'>
-                <p class='odgovor-paragraph'>{{ $data[0]->odgovor1 }}</p>
+                <p class='odgovor-paragraph'>{{ $data[$i]->odgovor1 }}</p>
             </div>
             <div class='odgovor-class'>
-                <p class='odgovor-paragraph'>{{ $data[0]->odgovor2 }}</p>
+                <p class='odgovor-paragraph'>{{ $data[$i]->odgovor2 }}</p>
             </div>
             @if($data[0]->odgovor3 !=null)
             <div class='odgovor-class'>
-                <p class='odgovor-paragraph'>{{ $data[0]->odgovor3 }}</p>
+                <p class='odgovor-paragraph'>{{ $data[$i]->odgovor3 }}</p>
             </div>
             @endif
             @if($data[0]->odgovor4 !=null)
             <div class='odgovor-class'>
-                <p class='odgovor-paragraph'>{{ $data[0]->odgovor4 }}</p>
+                <p class='odgovor-paragraph'>{{ $data[$i]->odgovor4 }}</p>
             </div>
             @endif
         </div>
-    <a href="/pitanje/">Next</a>
-    <a href="/pitanje/{{$data['prezentacija']->gen_kod}}/{{$data['pitanja'][0]->id}}/" target='_blank'>Počni prezentaciju</a>
-    
+        @if($i < count($data)-1)
+        <a href="/pitanje/{{ $idprezentacije }}/{{ ++$i }}">Next</a>
+        @else
+        <a href="/presentation/{{ $idprezentacije }}">End Presentation</a>
+        @endif
     </div>
     
     </body>
