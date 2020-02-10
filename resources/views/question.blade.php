@@ -12,6 +12,8 @@
 
         <!-- Style -->
         <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard/dashboard.css') }}" >
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     </head>
     <body>
 

@@ -33,11 +33,15 @@ function openPresentation(link, idpitanja){
 }
 
 </script>
-
+@if(count($data['pitanja']))
 <div className='form-group'>
-    <button type='submit' className='form-control' id='submit' name='submit' onclick="openPresentation( {{ $data['prezentacija']->gen_kod }} )" >Pusti prezentaciju</button>
+    <button type='submit' className='form-control' id='submit' name='submit' onclick="openPresentation( {{ json_encode($data['prezentacija']->gen_kod) }} )" >Pusti prezentaciju</button>
 </div>
-
+@else
+<div className='form-group'>
+    <button type='submit' className='form-control' id='submit' name='submit' disabled>Pusti prezentaciju</button>
+</div>
+@endif
     <div id='pitananja-div-container'>
     <table id='pitanja-table-container'>
         <tr>
