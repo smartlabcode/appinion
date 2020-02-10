@@ -17,6 +17,7 @@
     </head>
     <body>
 
+
     <div id='page-container'>
         <div id='title-container'><h3>{{ $data[$i]->pitanje }}</h3></div>
         
@@ -40,10 +41,22 @@
             @endif
         </div>
         @if($i < count($data)-1)
-        <a href="/pitanje/{{ $idprezentacije }}/{{ ++$i }}">Next</a>
+            @if($i>0)
+            <a href="/pitanje/{{ $idprezentacije }}/{{ $i-1 }}">Previous</a>
+            @endif
+            <a href="/pitanje/{{ $idprezentacije }}/{{ ++$i }}">Next</a>
         @else
-        <a href="/presentation/{{ $idprezentacije }}">End Presentation</a>
+            <a href="/pitanje/{{ $idprezentacije }}/{{ $i-1 }}">Previous</a>
+            <a href="/presentation/{{ $idprezentacije }}">End Presentation</a>
         @endif
+    </div>
+
+    <div className='form-group'>
+        <button type='submit' className='form-control' id='submit' name='submit' onclick="location.href='/presentation/{{$data[0]->id_prezentacije}}';" >Prezentacija</button>
+    </div>
+
+    <div className='form-group'>
+        <button type='submit' className='form-control' id='submit' name='submit' onclick="location.href='/';" >Dashboard</button>
     </div>
     
     </body>
