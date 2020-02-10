@@ -60,7 +60,14 @@ class QuestionController extends Controller
         
     }
 
-    public function editQuestionfour(Request $data, $questionid, $pitanje, $odg1, $odg2, $odg3, $odg4){
+    public function editQuestion(Request $data){
+
+        $questionid = $data->id;
+        $pitanje = $data->pitanje;
+        $odg1 = $data->odg1;
+        $odg2 = $data->odg2;
+        $odg3 = $data->odg3;
+        $odg4 = $data->odg4;
 
         $updateDetails = [
             'pitanje' => $pitanje,
@@ -74,37 +81,6 @@ class QuestionController extends Controller
             ->where('id', $questionid)
             ->update($updateDetails);
 
-        return redirect('/');
-    }
-
-    public function editQuestionthree(Request $data, $questionid, $pitanje, $odg1, $odg2, $odg3){
-
-        $updateDetails = [
-            'pitanje' => $pitanje,
-            'odgovor1' => $odg1,
-            'odgovor2' => $odg2,
-            'odgovor3' => $odg3
-        ];
-
-        DB::table('pitanja')
-            ->where('id', $questionid)
-            ->update($updateDetails);
-
-        return redirect('/');
-    }
-
-    public function editQuestiontwo(Request $data, $questionid, $pitanje, $odg1, $odg2){
-
-        $updateDetails = [
-            'pitanje' => $pitanje,
-            'odgovor1' => $odg1,
-            'odgovor2' => $odg2
-        ];
-
-        DB::table('pitanja')
-            ->where('id', $questionid)
-            ->update($updateDetails);
-
-        return redirect('/');
+        return back();
     }
 }

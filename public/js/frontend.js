@@ -1,3 +1,11 @@
+function openPresentation(link, idpitanja){
+    
+    var i = 0;
+
+    location.href='/pitanje/'+link+'/'+i;
+}
+
+
 function newQuestionFunction(value){
     var key = value;
     
@@ -25,71 +33,37 @@ function prikazipitanja(){
     }
 }
 
-function pokreniprezentaciju(){
-    console.log('karina');
-}
 
-function changeQuestion(id){
-    var btn = document.getElementById('pitanje-btn-' + id);
-    var pitanje = document.getElementById('pitanje-' + id);
-    var odg1 = document.getElementById('odgovor1-' + id);
-    var odg2 = document.getElementById('odgovor2-' + id);
-    if(document.getElementById('odgovor3-' + id) != null)
-        var odg3 = document.getElementById('odgovor3-' + id);
-    if(document.getElementById('odgovor4-' + id) != null)
-        var odg4 = document.getElementById('odgovor4-' + id);
 
-    if(btn.innerHTML == 'Promijeni'){
-        btn.innerHTML = 'Spasi';
-        pitanje.setAttribute('contenteditable', 'true');
-        odg1.setAttribute('contenteditable', 'true');
-        odg2.setAttribute('contenteditable', 'true');
-        if(document.getElementById('odgovor3-' + id) != null)
-            odg3.setAttribute('contenteditable', 'true');
-        if(document.getElementById('odgovor4-' + id) != null)
-            odg4.setAttribute('contenteditable', 'true');
-    }
-    else{
-        btn.innerHTML = 'Promijeni';
-        pitanje.setAttribute('contenteditable', 'false');
-        odg1.setAttribute('contenteditable', 'false');
-        odg2.setAttribute('contenteditable', 'false');
-        if(document.getElementById('odgovor3-' + id) != null)
-            odg3.setAttribute('contenteditable', 'false');
-        if(document.getElementById('odgovor4-' + id) != null)
-            odg4.setAttribute('contenteditable', 'false');
-        if(odg3.innerHTML != '  ' && odg4.innerHTML != '  '){
-            console.log('4');
-            $.ajax({
-                type:'POST',
-                url:'../../questioneditfour/'+id+'/'+pitanje.innerHTML+'/'+odg1.innerHTML+'/'+odg2.innerHTML+'/'+odg3.innerHTML+'/'+odg4.innerHTML,
-                data:{'_token':'{{ csrf_token() }}'},
-                success: function(data) {
-                    $(pitanje).text(data.msg);
-                }
-            });
-        } else if(odg3.innerHTML != '  ' && odg4.innerHTML == '  '){
-            console.log('3');
-            $.ajax({
-                type:'POST',
-                url:'../../questioneditthree/'+id+'/'+pitanje.innerHTML+'/'+odg1.innerHTML+'/'+odg2.innerHTML+'/'+odg3.innerHTML,
-                data:{'_token':'{{ csrf_token() }}'},
-                success: function(data) {
-                    $(pitanje).text(data.msg);
-                }
-            });
-        } else if(odg3.innerHTML == '  ' && odg4.innerHTML == '  '){
-            console.log('4');
-            
-            $.ajax({
-                type:'GET',
-                url:'../../questionedittwo/'+id+'/'+pitanje.innerHTML+'/'+odg1.innerHTML+'/'+odg2.innerHTML,
-                data:{'_token':'{{ csrf_token() }}'},
-                success: function(data) {
-                    $(pitanje).text(data.msg);
-                }
-            });
-        }
+    /*
+    if(odg3.innerHTML != '  ' && odg4.innerHTML != '  '){
+        $.ajax({
+            type:'POST',
+            url:'../questioneditfour/'+id+'/'+pitanje.innerHTML+'/'+odg1.innerHTML+'/'+odg2.innerHTML+'/'+odg3.innerHTML+'/'+odg4.innerHTML,
+            data:{'_token':'{{ csrf_token() }}'},
+            success: function(data) {
+                $(pitanje).text(data.msg);
+            }
+        });
+    } else if(odg3.innerHTML != '  ' && odg4.innerHTML == '  '){
+        $.ajax({
+            type:'POST',
+            url:'../../questioneditthree/'+id+'/'+pitanje.innerHTML+'/'+odg1.innerHTML+'/'+odg2.innerHTML+'/'+odg3.innerHTML,
+            data:{'_token':'{{ csrf_token() }}'},
+            success: function(data) {
+                $(pitanje).text(data.msg);
+            }
+        });
+    } else if(odg3.innerHTML == '  ' && odg4.innerHTML == '  '){
+        console.log('../questionedittwo/'+id+'/'+pitanje.innerHTML+'/'+odg1.innerHTML+'/'+odg2.innerHTML);
+        $.ajax({
+            type:'GET',
+            url:'../questionedittwo/'+id+'/'+pitanje.innerHTML+'/'+odg1.innerHTML+'/'+odg2.innerHTML,
+            data:{'_token':'{{ csrf_token() }}'},
+            success: function(data) {
+                $(pitanje).text(data.msg);
+            }
+        });
         
-    }
-}
+    }*/
+    

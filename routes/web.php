@@ -61,8 +61,7 @@ Route::post('/addQuestion', 'QuestionController@addQuestion');
 Route::get('/pitanje/{idprezentacije}/{i}', 'ShowQuestionController@showQuestionPage');
 
 //Upravljanje pitanja i odgovora
+Route::post('/editQuestion', 'QuestionController@editQuestion');
 Route::get('/questiondelete/{presentationid}/{emailkorisnika}/{idpitanja}', 'QuestionController@deleteQuestion');
 
-Route::get('/questioneditfour/{pitanjeid}/{pitanje}/{odg1}/{odg2}/{odg3}/{odg4}', 'QuestionController@editQuestionfour');
-Route::get('/questioneditthree/{pitanjeid}/{pitanje}/{odg1}/{odg2}/{odg3}', 'QuestionController@editQuestionthree');
-Route::get('/questionedittwo/{pitanjeid}/{pitanje}/{odg1}/{odg2}/', 'QuestionController@editQuestiontwo');
+
