@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 
 class PresentationController extends Controller
 {
+
     public function showPresentation(Request $request, $idprezentacije){
         $showTable = false;
         if(Session::get('refresh')){

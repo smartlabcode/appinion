@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Middleware\Redirect;
+
 Route::get('/', function () {
 
     if(Auth::user()){
@@ -41,15 +43,16 @@ Route::post('/login', 'Auth\LoginController@login');
 //Logout
 Route::post('/logout', 'Auth\LoginController@logout');
 
+
 //Profil
-Route::get('/profile', 'UserController@showProfile');
-Route::post('/profile', 'UserController@updateAvatar');
+Route::get('/profile', 'UserController@showProfile')->middleware(Redirect::class);
+Route::post('/profile', 'UserController@updateAvatar')->middleware(Redirect::class);
 
 //Dodavanje prezentacije
-Route::post('/addpresentation', 'DashboardController@addPresentation');
+Route::post('/addpresentation', 'DashboardController@addPresentation')->middleware(Redirect::class);
 
 //Brisanje prezentacije
-Route::get('/presentationdelete/{idprezentacije}', 'DashboardController@deletePresentation');
+Route::get('/presentationdelete/{idprezentacije}', 'DashboardController@deletePresentation')->middleware(RedirectIfAuthenticated::class);
 
 //Gledanje prezentacije
 Route::get('/presentation/{idprezentacije}', 'PresentationController@showPresentation');
@@ -65,3 +68,10 @@ Route::post('/editQuestion', 'QuestionController@editQuestion');
 Route::get('/questiondelete/{presentationid}/{emailkorisnika}/{idpitanja}', 'QuestionController@deleteQuestion');
 
 
+
+
+//Android serverside
+Route::post('/getandroidquestion', 'AndroidController@getQuestion');
+Route::post('/getandroidresponse', 'AndroidController@getAnswer');
+Route::post('/registerandroiduser', 'AndroidController@registerUser');
+Route::post('/getpresentations', 'AndroidController@getPresentations');

@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 
 class ShowQuestionController extends Controller
 {
+
     public function showQuestionPage(Request $request, $idprezentacije, $i){
 
         $data = DB::table('pitanja')
