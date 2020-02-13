@@ -52,20 +52,20 @@ Route::post('/profile', 'UserController@updateAvatar')->middleware(Redirect::cla
 Route::post('/addpresentation', 'DashboardController@addPresentation')->middleware(Redirect::class);
 
 //Brisanje prezentacije
-Route::get('/presentationdelete/{idprezentacije}', 'DashboardController@deletePresentation')->middleware(RedirectIfAuthenticated::class);
+Route::get('/presentationdelete/{idprezentacije}', 'DashboardController@deletePresentation')->middleware(Redirect::class);
 
 //Gledanje prezentacije
-Route::get('/presentation/{idprezentacije}', 'PresentationController@showPresentation');
+Route::get('/presentation/{idprezentacije}', 'PresentationController@showPresentation')->middleware(Redirect::class);
 
 //Dodavanje pitanja
-Route::post('/addQuestion', 'QuestionController@addQuestion');
+Route::post('/addQuestion', 'QuestionController@addQuestion')->middleware(Redirect::class);
 
 //Preview pitanja i odgovora
-Route::get('/pitanje/{idprezentacije}/{i}', 'ShowQuestionController@showQuestionPage');
+Route::get('/pitanje/{idprezentacije}/{i}', 'ShowQuestionController@showQuestionPage')->middleware(Redirect::class);
 
 //Upravljanje pitanja i odgovora
-Route::post('/editQuestion', 'QuestionController@editQuestion');
-Route::get('/questiondelete/{presentationid}/{emailkorisnika}/{idpitanja}', 'QuestionController@deleteQuestion');
+Route::post('/editQuestion', 'QuestionController@editQuestion')->middleware(Redirect::class);
+Route::get('/questiondelete/{presentationid}/{emailkorisnika}/{idpitanja}', 'QuestionController@deleteQuestion')->middleware(Redirect::class);
 
 
 
