@@ -26,11 +26,15 @@ class AndroidController extends Controller
 
         $email = $request->email;
         $password = $request->password;
+        $ime = $request->ime;
+        $prezime = $request->prezime;
 
         try{
         DB::table('presentation_users')
             ->insert(
                 [
+                    'ime' => $ime,
+                    'prezime' => $prezime,
                     'email' => $email,
                     'password' => Hash::make($password),
                 ]
@@ -66,5 +70,39 @@ class AndroidController extends Controller
 
 
         dd($presentationlist);
+    }
+
+    public function joinPresentation(Request $request){
+
+        $idPrezentacije = $request->id;
+        $allPresentations = DB::table('prezentacije')->get();
+
+        $i = 0;
+        foreach($allPresentations as $presentacija){
+            if($presentacija->gen_kod == $idPrezentacije){
+                $i = 1;
+
+                $email = $request->email;
+
+                $prezentacijeDB = (DB::table('presentation_users')->get());
+                $emailDB = $prezentacijeDB[0]->email;
+                $prezentacijeDB = json_decode($prezentacijeDB[0]->id_prezentacije);
+                
+                $prezentacijeDB .= $idPrezentacije;
+                $prezentacijeDB = json_encode($prezentacijeDB);
+
+                DB::table('presentation_users')->where('email', $emailDB)
+                    ->update(['id_prezentacije' => (json_encode($prezentacijeDB))]);
+                
+                return \response()
+                    ->json(["Message:" => "Pridruzili ste se prezentaciji ".$presentacija->ime_prezentacije]);
+                break;
+            }
+            else{
+                return \response()
+                    ->json(["Message:" => "Prezentacija ne postoji"]);
+            }
+        }
+
     }
 }

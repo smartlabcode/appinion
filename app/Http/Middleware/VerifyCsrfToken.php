@@ -23,5 +23,6 @@ class VerifyCsrfToken extends Middleware
         '/getandroidquestion',
         '/registerandroiduser',
         '/getpresentations',
+        '/joinpresentation',
     ];
 }

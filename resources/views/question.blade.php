@@ -33,7 +33,7 @@
                     labels:['{!! $data[$i]->odgovor1 !!}','{!! $data[$i]->odgovor2 !!}','{!! $data[$i]->odgovor3 !!}','{!! $data[$i]->odgovor4 !!}'],
                     datasets: [{
                         label: '# of Votes',
-                        data: [15, 14, 13, 12],
+                        data: ['{!! $odgovoriZaPitanje[0] !!}', '{!! $odgovoriZaPitanje[1] !!}', '{!! $odgovoriZaPitanje[2] !!}', '{!! $odgovoriZaPitanje[3] !!}'],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
