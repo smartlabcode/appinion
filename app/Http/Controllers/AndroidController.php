@@ -54,22 +54,38 @@ class AndroidController extends Controller
 
     public function getPresentations(Request $request){
 
-        $array = array("12345", "abcde", "1a2b3", "2a1bc");
-        
-        DB::table('presentation_users')
-            ->where('email', $request->email)
-            ->update(['id_prezentacije' => (json_encode($array))]);
-        
+       $presentationUserList = DB::table('presentation_users')->where('email', $request->email)->pluck('id_prezentacije');
+       $presentationUserListArray = explode(",",$presentationUserList[0], -1);
+       
+       $presentationList = DB::table('prezentacije')->get();
 
-        $result = DB::table('presentation_users')
-            ->where('email', $request->email)
-            ->pluck('id_prezentacije');
+       $presentationIDs=[];
+       foreach($presentationList as $presentacija){
 
-        $presentationlist = json_decode($result[0]);
-        //$numberofpresentations = \count($presentationlist[0]);
+            array_push($presentationIDs, $presentacija->gen_kod);
 
+        }
 
-        dd($presentationlist);
+        $returnObject = array();
+
+       foreach($presentationUserListArray as $id){
+            foreach($presentationIDs as $definedPresentationsID){
+
+                if($id == $definedPresentationsID){
+                    $data = [
+
+                        "Ime Prezentacije" => (DB::table('prezentacije')->where('gen_kod', $id)->pluck('ime_prezentacije'))[0],
+                        "Kljuc prezentacije" => $id,
+                        "Autor prezentacije" => (DB::table('prezentacije')->where('gen_kod', $id)->pluck('email_autora'))[0]
+
+                    ];
+                array_push($returnObject, $data);
+                }
+
+            }
+       }
+
+       return $returnObject;
     }
 
     public function joinPresentation(Request $request){
@@ -78,31 +94,42 @@ class AndroidController extends Controller
         $allPresentations = DB::table('prezentacije')->get();
 
         $i = 0;
+
+        $presentationIDs = [];
+
         foreach($allPresentations as $presentacija){
-            if($presentacija->gen_kod == $idPrezentacije){
-                $i = 1;
 
-                $email = $request->email;
+            array_push($presentationIDs, $presentacija->gen_kod);
 
-                $prezentacijeDB = (DB::table('presentation_users')->get());
-                $emailDB = $prezentacijeDB[0]->email;
-                $prezentacijeDB = json_decode($prezentacijeDB[0]->id_prezentacije);
-                
-                $prezentacijeDB .= $idPrezentacije;
-                $prezentacijeDB = json_encode($prezentacijeDB);
-
-                DB::table('presentation_users')->where('email', $emailDB)
-                    ->update(['id_prezentacije' => (json_encode($prezentacijeDB))]);
-                
-                return \response()
-                    ->json(["Message:" => "Pridruzili ste se prezentaciji ".$presentacija->ime_prezentacije]);
-                break;
-            }
-            else{
-                return \response()
-                    ->json(["Message:" => "Prezentacija ne postoji"]);
-            }
         }
+
+        foreach($presentationIDs as $id){
+
+            if($request->id == $id){
+                
+                $existingPresentations = (DB::table('presentation_users')->where('email', $request->email)->pluck('id_prezentacije'));
+
+                if(strpos($existingPresentations[0], $id) === false){
+                    $existingPresentations[0] .= $id . ",";
+
+                    DB::table('presentation_users')
+                        ->where('email', $request->email)
+                        ->update(['id_prezentacije' => $existingPresentations[0]]);
+
+                    return \response()
+                        ->json(["Message:" => "Pridruzili ste se prezentaciji ".$presentacija->ime_prezentacije]);
+                }
+                else{
+                    return \response()
+                        ->json(["Message:" => "Vec ste pridruzeni prezentaciji ".$presentacija->ime_prezentacije]);
+                }
+
+            }
+
+        }
+
+        return \response()
+            ->json(["Message:" => "Prezentacija ne postoji"]);
 
     }
 }
