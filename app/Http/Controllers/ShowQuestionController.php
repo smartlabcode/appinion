@@ -79,6 +79,13 @@ class ShowQuestionController extends Controller
             }
         }
 
+        $this->setQuestionsToFalse($idprezentacije);
+
+        $idpitanja = $data[$i]->id;
+
+        $this->setQuestionToTrue($idpitanja);
+
+
         $odgovoriZaPitanje = [$odg1, $odg2, $odg3, $odg4];
 
         if($i<count($data)){
@@ -87,5 +94,25 @@ class ShowQuestionController extends Controller
         else if($i == count($data)){
             return view('question')->with('data', $data)->with('i', "end")->with('idprezentacije', $idprezentacije)->with('odgovoriZaPitanje', $odgovoriZaPitanje);
         }
+    }
+
+
+    public function setQuestionsToFalse($idprezentacije){
+
+        $questions = DB::table('pitanja')->where('id_prezentacije', $idprezentacije)->get();
+
+        foreach($questions as $question){
+
+            DB::table('pitanja')->where('id', $question->id)
+                ->update(['vidljivo' => false]);
+        }
+
+    }
+
+    public function setQuestionToTrue($idpitanja){
+
+        DB::table('pitanja')->where('id', $idpitanja)
+            ->update(['vidljivo' => true]);
+
     }
 }

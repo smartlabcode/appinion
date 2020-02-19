@@ -16,12 +16,18 @@
 
         <!-- Style -->
         <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard/dashboard.css') }}" >
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/header.css') }}" >
 
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
        
     </head>
+
+
     <body>
+        <header>
+            @include('layouts.header')
+        </header>
         @if(!Auth::user())
         <div id="auth-container"></div>
         <script src="/js/app.js"></script>

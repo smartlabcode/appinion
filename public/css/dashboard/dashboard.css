@@ -1,3 +1,9 @@
+body{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 #prezentacije-container{
 
     display: grid;
@@ -8,9 +14,10 @@
 }
 
 .prezentacija-container{
-    width: 350px;
+    width: 400px;
+    height: 100px;
     background: grey;
-    display: inline;
+    display: flex;
     color: whitesmoke;
     border: 1px solid red;
     margin: 10px auto;

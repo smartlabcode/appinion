@@ -40,12 +40,9 @@ class CreateUsersTable extends Migration
         Schema::create('presentation_users', function(Blueprint $table){
 
             $table->bigIncrements('id');
-            $table->string('id_prezentacije')->nullable()->default(null);
             $table->string('ime')->default("NoName");
             $table->string('prezime')->default("NoSurname");
             $table->string('email')->unique();
-            $table->string('password');
-            //$table->rememberToken();
             $table->timestamps();
         });
 

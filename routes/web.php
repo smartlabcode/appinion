@@ -68,11 +68,9 @@ Route::post('/editQuestion', 'QuestionController@editQuestion')->middleware(Redi
 Route::get('/questiondelete/{presentationid}/{emailkorisnika}/{idpitanja}', 'QuestionController@deleteQuestion')->middleware(Redirect::class);
 
 
-
-
 //Android serverside
 Route::post('/getandroidquestion', 'AndroidController@getQuestion');
 Route::post('/getandroidresponse', 'AndroidController@getAnswer');
 Route::post('/registerandroiduser', 'AndroidController@registerUser');
-Route::post('/getpresentations', 'AndroidController@getPresentations');
 Route::post('/joinpresentation', 'AndroidController@joinPresentation');
+Route::post('/checkforanswers', 'AndroidController@checkForAnswers');

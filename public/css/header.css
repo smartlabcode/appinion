@@ -1,0 +1,23 @@
+.menu{
+    display: flex;
+}
+
+.menu-container{
+    margin-left: 200px;
+    display: flex;
+}
+
+.menu-element{
+
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.google-play-container{
+    align-content: flex-end;
+}
+
+#store-img{
+    width: 150px;
+}

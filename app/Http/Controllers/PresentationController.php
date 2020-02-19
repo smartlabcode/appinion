@@ -40,6 +40,14 @@ class PresentationController extends Controller
 
         if($prezentacija->email_autora == Auth::user()->email)
         {
+            $questions = DB::table('pitanja')->where('id_prezentacije', $idprezentacije)->get();
+
+            foreach($questions as $question){
+    
+                DB::table('pitanja')->where('id', $question->id)
+                    ->update(['vidljivo' => false]);
+            }
+
             return view('presentation')->with('data', $data)
                 ->with('kodPrezentacije', strval($data['prezentacija']->gen_kod))
                 ->with('showTable', $showTable);

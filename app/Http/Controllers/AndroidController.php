@@ -12,7 +12,54 @@ class AndroidController extends Controller
 
         $answer = $request->all();
 
-        return response()->json($answer);
+        $id_prezentacije = $request->id_prezentacije;
+        $id_pitanja = intval($request->id_pitanja);
+        $email = $request->email;
+        $odg = $request->odg;
+
+
+        $userID = DB::table('presentation_users')->where('email', $email)->get();
+        $userID = $userID[0]->id;
+
+        //dd($id_prezentacije, $id_pitanja, $userID, $odg);
+        
+        $allAnswers = DB::table('odgovori')->get();
+        foreach($allAnswers as $answer){
+            if($answer->id_prezentacije == $id_prezentacije && $answer->id_pitanja == $id_pitanja && $answer->id_korisnika == $userID){
+                return \response()
+                    ->json(["Message:" => "Već ste odgovorili na ovo pitanje", "Status_code"=> 500]);
+            }
+        }
+
+        DB::table('odgovori')->insert(
+            [
+                "id_prezentacije" => $id_prezentacije,
+                "id_pitanja" => $id_pitanja,
+                "id_korisnika" => $userID,
+                "odgovor" => $odg
+            ]
+            );
+
+        return \response()
+            ->json(["Message:" => "Vase pitanje je prihvaceno", "Status_code"=> 200]);
+
+    }
+
+    public function checkForAnswers(Request $request){
+
+        //$userid = DB::table('presentation_users')->where('email', $request->email)->get();
+
+        $pitanja = DB::table('pitanja')->where('id_prezentacije', $request->id)->get();
+        foreach($pitanja as $pitanje){
+            if($pitanje->vidljivo == true){
+                return \response()
+                    ->json(["Vidljivo:" => 1, "id_pitanja"=>$pitanje->id, "presentatioNID"=>$request->id]);
+            }
+        }
+
+        return \response()
+            ->json(["Vidljivo:" => 0, "id_pitanja" => 0, "presentatioNID"=>$request->id]);
+
     }
 
     public function getQuestion(Request $request)
@@ -25,7 +72,6 @@ class AndroidController extends Controller
     public function registerUser(Request $request){
 
         $email = $request->email;
-        $password = $request->password;
         $ime = $request->ime;
         $prezime = $request->prezime;
 
@@ -36,7 +82,6 @@ class AndroidController extends Controller
                     'ime' => $ime,
                     'prezime' => $prezime,
                     'email' => $email,
-                    'password' => Hash::make($password),
                 ]
 
             );
@@ -50,42 +95,6 @@ class AndroidController extends Controller
         }
 
         
-    }
-
-    public function getPresentations(Request $request){
-
-       $presentationUserList = DB::table('presentation_users')->where('email', $request->email)->pluck('id_prezentacije');
-       $presentationUserListArray = explode(",",$presentationUserList[0], -1);
-       
-       $presentationList = DB::table('prezentacije')->get();
-
-       $presentationIDs=[];
-       foreach($presentationList as $presentacija){
-
-            array_push($presentationIDs, $presentacija->gen_kod);
-
-        }
-
-        $returnObject = array();
-
-       foreach($presentationUserListArray as $id){
-            foreach($presentationIDs as $definedPresentationsID){
-
-                if($id == $definedPresentationsID){
-                    $data = [
-
-                        "Ime Prezentacije" => (DB::table('prezentacije')->where('gen_kod', $id)->pluck('ime_prezentacije'))[0],
-                        "Kljuc prezentacije" => $id,
-                        "Autor prezentacije" => (DB::table('prezentacije')->where('gen_kod', $id)->pluck('email_autora'))[0]
-
-                    ];
-                array_push($returnObject, $data);
-                }
-
-            }
-       }
-
-       return $returnObject;
     }
 
     public function joinPresentation(Request $request){
@@ -106,30 +115,14 @@ class AndroidController extends Controller
         foreach($presentationIDs as $id){
 
             if($request->id == $id){
-                
-                $existingPresentations = (DB::table('presentation_users')->where('email', $request->email)->pluck('id_prezentacije'));
 
-                if(strpos($existingPresentations[0], $id) === false){
-                    $existingPresentations[0] .= $id . ",";
-
-                    DB::table('presentation_users')
-                        ->where('email', $request->email)
-                        ->update(['id_prezentacije' => $existingPresentations[0]]);
-
-                    return \response()
-                        ->json(["Message:" => "Pridruzili ste se prezentaciji ".$presentacija->ime_prezentacije]);
-                }
-                else{
-                    return \response()
-                        ->json(["Message:" => "Vec ste pridruzeni prezentaciji ".$presentacija->ime_prezentacije]);
-                }
-
+                return \response()
+                    ->json(["Message:" => "Pridruzili ste se prezentaciji ".$presentacija->ime_prezentacije, "StatusCode:" => 200, "presentatioNID" => $request->id]);
             }
-
         }
 
         return \response()
-            ->json(["Message:" => "Prezentacija ne postoji"]);
+            ->json(["Message:" => "Prezentacija ne postoji", "StatusCode:" => 404]);
 
     }
 }
