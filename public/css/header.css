@@ -1,17 +1,38 @@
 .menu{
     display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 20px;
+
+    height: 10vh;
+}
+
+.logo-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .menu-container{
-    margin-left: 200px;
+    margin-left: 100px;
     display: flex;
 }
 
 .menu-element{
 
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
 
+}
+
+.header-link{
+    color: #fff;
+}
+
+a{
+    text-decoration: none;
 }
 
 .google-play-container{

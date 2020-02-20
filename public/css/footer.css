@@ -1,0 +1,43 @@
+.footer-container{
+
+    width: 100%;
+    background-color: #ffffff;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 15rem;
+}
+
+.footer-column{
+    width: 15%;
+
+    height: 250px;
+
+    margin: 0 auto;
+}
+
+#column-one{
+    width: 25% !important;
+}
+
+#footer-logo{
+    width: 100%;
+}
+
+.footer-header{
+    color: #4C3056;
+    font-size: 14pt;
+}
+
+.footer-small-text{
+    color: #4C3056;
+}
+
+.footer-small-text{
+    font-size: 10pt;
+}
