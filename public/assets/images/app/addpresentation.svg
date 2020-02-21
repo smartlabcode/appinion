@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="71.70208mm"
+   height="12.7mm"
+   viewBox="0 0 71.70208 12.7"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="addpresentation.svg">
+  <defs
+     id="defs2">
+    <style
+       id="style10">.a,.b{fill:#fff;}.a{font-size:24px;}.a,.d{font-family:GalanoGrotesque-Regular, Galano Grotesque;}.c{fill:#d9d9d9;}.d{fill:#4c3056;font-size:18px;}.e{fill:#e94c55;}</style>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="22.012115"
+     inkscape:cy="2.1475245"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g42"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1137"
+     inkscape:window-x="1672"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(119.89405,-169.96221)">
+    <g
+       id="g42"
+       transform="matrix(0.26458333,0,0,0.26458333,-444.80238,155.93929)">
+      <g
+         id="g34"
+         transform="translate(1250.898,53)">
+        <rect
+           id="rect28"
+           transform="translate(-22.898)"
+           rx="24"
+           height="48"
+           width="271"
+           class="b"
+           x="0"
+           y="0"
+           style="fill:#ffffff" />
+        <text
+           id="text32"
+           transform="translate(133.748,29.4)"
+           class="d"
+           style="font-size:18px;font-family:GalanoGrotesque-Regular, 'Galano Grotesque';fill:#4c3056">
+          <tspan
+             id="tspan30"
+             y="0"
+             x="-83.519997">Dodaj prezentaciju</tspan>
+        </text>
+      </g>
+      <g
+         id="g38"
+         transform="translate(1247.371,63.371)">
+        <path
+           id="path36"
+           d="m 26.193,12.564 h -11.5 V 1.065 a 1.065,1.065 0 0 0 -2.13,0 v 11.5 H 1.065 a 1.065,1.065 0 0 0 0,2.13 h 11.5 v 11.5 a 1.065,1.065 0 0 0 2.13,0 v -11.5 h 11.5 a 1.065,1.065 0 0 0 0,-2.13 z"
+           class="e"
+           inkscape:connector-curvature="0"
+           style="fill:#e94c55" />
+      </g>
+    </g>
+  </g>
+</svg>

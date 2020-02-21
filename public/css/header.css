@@ -16,8 +16,10 @@
 }
 
 .menu-container{
-    margin-left: 100px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .menu-element{
@@ -40,5 +42,116 @@ a{
 }
 
 #store-img{
-    width: 150px;
+    width: 200px;
+}
+
+.add-presentation-img{
+    width: 60%;
+}
+
+/*Dropdown menu*/
+#dropdown-container{
+    width: 200px;
+    margin: 0 auto;
+
+}
+
+.dropdown {
+    position: relative;
+    width: 100%;
+
+    cursor: pointer;
+
+    margin: 0 auto;
+
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    transition: .5s linear;
+  }
+
+.dropdown:hover{
+    background: #E94C55;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    transition: .5s linear;
+}
+
+.dropdown p{
+    font-size: 14pt;
+    color: #fff;
+}
+  
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    height: 0;
+    
+    position: absolute;
+    background: #E94C55;
+    width: 200px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+    transition: .5s linear;
+}
+
+
+.dropdown-content a{
+    font-style: normal;
+    color: #fff;
+
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+
+    transition: .5s linear;
+}
+
+.dropdown-content a:hover{
+    font-size: 15pt;
+    font-weight: bold;
+
+    transition: .5s linear;
+}
+
+.dropdown:hover .dropdown-content {
+    width: 200px;
+    height: 130px;
+    opacity: 1;
+
+    transition: .5s linear;
+}
+
+.dropdown span{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#add-presentation-small{
+    width: 250px;
+    height: 50px;
+
+    background-color: #fff;
+
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
 }

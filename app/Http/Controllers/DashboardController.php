@@ -22,6 +22,10 @@ class DashboardController extends Controller
         return substr(md5(microtime()),rand(0,26),5);
     }
 
+    public function add(){
+        return view('addpresentation');
+    }
+
     public function addPresentation(Request $data){
 
         $useremail = Auth::User()->email;

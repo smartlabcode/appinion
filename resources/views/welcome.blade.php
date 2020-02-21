@@ -15,7 +15,12 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Style -->
+        @if(!Auth::user())
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard/landing.css') }}" >
+        @endif
+        @if(Auth::user())
         <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard/dashboard.css') }}" >
+        @endif
         <link rel="stylesheet" type="text/css" href="{{ asset('css/header.css') }}" >
         <link rel="stylesheet" type="text/css" href="{{ asset('css/footer.css') }}" >
 
@@ -23,7 +28,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
        
     </head>
-
 
     <body>
         <header>
@@ -41,8 +45,8 @@
                                 <h4>Lorem ipsum ist est</h4>
                             </div>
                             <div id="buttons-container">
-                                <button class="auth-button" id="reg-button">Registracija</button>
-                                <button class="auth-button" id="log-button">Login</button>
+                                <button class="auth-button" id="reg-button" onclick="window.location.href = '/registracija';">Registracija</button>
+                                <button class="auth-button" id="log-button" onclick="window.location.href = '/prijava';">Login</button>
                             </div>
                         </div>
                         <div id="top-images-container">
@@ -203,42 +207,16 @@
                 <script src="/js/app.js"></script>
                 @endif
                 @if(Auth::user())
-                    <h1>Dashboard</h1>
-                    <div id="profile-container"></div>
-                    <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:150px; height:150px; border-radius: 50%"></img>
-                    <form className='logout-form' method='POST' action='/logout'>
-                        @csrf
-                        <div className='form-group'>
-                            <input type='submit' className='form-control' id='submit' name='submit' value="Logout"></input>
-                        </div>
-                    </form>
-                    <div className='form-group'>
-                            <button type='submit' className='form-control' id='submit' name='submit' onclick="location.href='/profile';" >Edit Profile</button>
-                    </div>
-                    <div id="dashboard-container"></div>
-                        <script>
-                            let name = '{{ Auth::user()->name }}';
-                            let last_name = '{{ Auth::user()->last_name }}';
-                            let email = '{{ Auth::user()->email }}';
-                        </script>
-                    <div id='prezentacije-container'>
-                    @foreach($data['prezentacije'] as $prezentacije)
-                        @foreach($prezentacije as $prezentacija)
-                        <div class="prezentacija-container" id="prezentacija-container" onclick="location.href='/presentation/{{$prezentacija->gen_kod}}/';">
-                            <h3 id='{{ $prezentacija->ime_prezentacije }}'>{{ $prezentacija->ime_prezentacije }} </h3>
-                            <a href='/presentationdelete/{{ $prezentacija->gen_kod }}' >Izbriši prezentaciju</a>
-                            <p>Ključ prezentacije:</p> 
-                            <p id="{{ $prezentacija->gen_kod }}">{{ $prezentacija->gen_kod }}</p>
-                        </div> 
-                        @endforeach
-                    @endforeach
-                    </div>
+                @include('layouts.app')
                 <script src="/js/app.js"></script>
                 @endif
             </div>
         </div>
+
+
         <footer>
         @include('layouts.footer')
         </footer>
+
     </body>
 </html>

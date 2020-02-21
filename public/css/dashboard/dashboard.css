@@ -3,9 +3,12 @@ body{
     margin-left: 10%;
     margin-right: 10%;
 
-    background-image: url('../../assets/images/background-images/bg.svg');
-    background-position-y: -100px;
-    background-size: 100%;
+
+    background-color: #4C3056;
+    background-image: url('../../assets/images/background-images/Subtraction14.svg');
+    background-size: 60%;
+    background-position-y: -400px;
+    background-position-x: 1200px;
     background-repeat: no-repeat;
 
     font-family: 'Source Sans Pro', sans-serif;
@@ -15,402 +18,130 @@ body{
     overflow-x: hidden;
 }
 
-#page-container{
-    position: relative;
-    min-height: 100vh;
-}
-
-#content-wrap{
-    padding-bottom: 2.5rem;
-}
-
-footer{
-    position: absolute;
-    width: 80%;
-    height: 15rem;
-    margin: 0 auto;
-    margin-top: 15rem;    
-}
-
-h1, h2, h3, h4, h5, h6{
-    font-family: "Montserrat", sans-serif;
-}
-
-h1{
-    font-size: 2.5em;
-}
-
-#top-content-container{
-
-    margin-top: 40px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#title-container h1, h4{
-
-    color: #ffffff;
-}
-
-#top-substtraction{
-    position: absolute;
-    top: -10%;
-    right: -40%;
-    z-index: -10;
-    width: 80%;
-}
-
-#title-buttons-container{
-    width: 100%;
-}
-
-button{
-    font-size: 12pt;
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
-.auth-button{
-    width: 140px;
-    height: 40px;
-    border: none;
-
-    border-radius: 20px;
-}
-
-#reg-button{
-    margin-right: 15px;
-}
-
-.auth-button:hover{
-    cursor: pointer;
-}
-
-#reg-button{
-    background-color: #E94C55;
-    color: #ffffff;
-}
-
-#top-mobile{
-    width: 60%;
-    float: right;
-}
-
-#pogodnosti-container{
-    
-    width: 70%;
-    margin: 0 auto;
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 280px;
-}
-
-#pogodnosti-title-container{
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-#pogodnosti-title-text-container h2{
-    font-size: 2.0em;
-    color: #E94C55;
-}
-
-#pogodnosti-title-image-container{
-    margin: 0 auto;
-}
-
-#pogodnosti-text-container{
-    text-align: center;
-    font-size: 15pt;
-}
-
-
-#pogodnosti-cards-container{
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0 auto;
-    flex-direction: row;
-    margin-top: 80px;
-}
-
-.pogodnosti-card-class{
-    width: 30%;
-    height: 400px;
-    background-color: #ffffff;
-    border-radius: 20px;
-
-    display: flex;
-    flex-direction: column;
-
-    -webkit-box-shadow: -1px -1px 15px 1px rgba(0, 53, 145, 0.15);;
-    box-shadow: -1px -1px 15px 1px rgba(0, 53, 145, 0.15);;
-}
-
-.pogodnosti-icon-container{
-    margin: 0 auto;
-    margin-top: 60px;
-}
-
-.pogodnosti-card-title-container{
-    margin: 0 auto;
-}
-
-.pogodnosti-card-text-container{
-    width: 80%;
-    margin: 0 auto;
-}
-
-/**/
-
-#o-nama-container{
-    
-    width: 70%;
-    margin: 0 auto;
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 150px;
-}
-
-#o-nama-background-image{
-    position: absolute;
-    width: 70%;
-    left: -45%;
-    margin-top: 140px;
-    z-index: -5;
-}
-
-#o-nama-title-container{
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-#o-nama-title-text-container h2{
-    font-size: 2.0em;
-    color: #E94C55;
-}
-
-#o-nama-title-image-container{
-    margin: 0 auto;
-}
-
-#o-nama-quotes-container{
-    margin-top: 40px;
-}
-
-.o-nama-quote-box-image{
-    width: 100%;
-}
-
-.vl {
-  border-left: 6px solid #D9D9D9;
-  height: 152px;
-}
-
-.quote-content-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    justify-content: space-evenly;
-    align-items: center;
-
-    background-image: url('../../assets/images/body/o-nama/Union1.svg');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    height: 240px;
-}
-
-#o-nama-quote-two{
-    margin-left: 100px;
-    margin-right: -100px;
-}
-
-.quote-content-container p{
-    width: 80%;
-}
-
-.quote-content-text{
-    flex-basis: 55%;
-}
-
-#o-nama-text-container{
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    text-align: center;
-    font-size: 15pt;
-}
-
-/**/
-
-#preuzimanje-container{
-    
-    width: 70%;
-    margin: 0 auto;
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 50px;
-}
-
-#preuzimanje-title-container{
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-#preuzimanje-title-text-container h2{
-    font-size: 2.0em;
-    color: #E94C55;
-}
-
-#preuzimanje-title-image-container{
-    margin: 0 auto;
-}
-
-#preuzimanje-text-container{
-    text-align: center;
-    font-size: 15pt;
-}
-
-#preuzimanje-google-content-container{
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    margin-top: 80px;
-}
-
-#preuzimanje-title-image{
-    margin: 0 auto;
-}
-
-#download-button{
-    width: 200px !important;
-    background-color: #E94C55;
-    color: #ffffff;
-    margin: 0 auto;
-    margin-top: 50px;
-}
-
-#kontakt-container{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    margin-top: 150px;
-}
-
-.kontakt-background{
-    position: absolute;
-    margin-top: -100px;
-    left: 0;
-    z-index: -5;
-}
-
-#kontakt-background-image{
-    width: 1920px;
-    height: 792px;
-    margin-left: -10%;
-    object-fit: cover;
-}
-
-#kontakt-title-image-container{
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-}
-
-#kontakt-title-image{
-    margin: 0 auto;
-}
-
-#kontakt-title-text-container{
-    margin: 0 auto;
-    color: #fff;
-}
-
-#kontakt-form-container{
-    width: 100%;
-}
-
-#form-kontakt-class{
-    width: 60%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-.input-kontakt-class{
-    height: 40px;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #fff;
-    margin-top: 30px;
-    transition: ease-in, 1s;
-
-    font-size: 14pt;
-    color: #fff;
-}
-
-.input-kontakt-class:focus{
-    font-size: 16pt;
-    height: 45px;
-
-    transition: linear, 1s;
-}
-
-#input-kontakt-button{
-    margin: 0 auto;
-    margin-top: 40px;
-    width: 140px;
-    height: 40px;
-
-    border: none;
-    cursor: pointer;
-
-    border-radius: 20px;
-    background-color: #E94C55;
-    color: #fff;
+#app-container{
+    margin-bottom: 100px;
 }
 
 #prezentacije-container{
 
-    display: grid;
-    margin: 10px auto;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-auto-flow: row;
-    margin-bottom: 20px;
+    height: auto;
+    opacity: 1;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    padding: 30px;
+
+    transition: .5s linear;
+}
+
+.prezentacije-hide{
+    height: 0 !important;
+    opacity: 0 !important;
+
+    transition: .5s linear;
 }
 
 .prezentacija-container{
-    width: 400px;
-    height: 100px;
-    background: grey;
+    width: 300px;
+    height: 465px;
+
+    border: 2px solid #ffffff;
+
+    border-radius: 50px;
+
+    margin: 0 30px;
+
+    cursor: pointer;
+
     display: flex;
-    color: whitesmoke;
-    border: 1px solid red;
-    margin: 10px auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.prezentacija-container:hover{
-    cursor: pointer;
+#prezentacija-container{
+    background-color: #fff;
+}
+
+#prezentacija-container h3, p{
+    color: #4C3056;
+
+    font-weight: lighter;
+}
+
+.prezentacija-btn{
+    width: 220px;
+    height: 50px;
+
+    background-color: #E94C55;
+
+    border-radius: 25px;
+
+    margin-top: 15px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.prezentacija-btn p{
+    color: #fff;
+    margin-right: 10px;
+}
+
+.grey-line{
+    width: 70%;
+    border: 1px solid rgba(217, 217, 217, 0.3);
+
+    margin: 10px;
+}
+
+#add-presentation-button-container{
+    backdrop-filter: blur(8px);
+}
+
+/* Add presentation */
+
+#add-presentation-form-container{
+
+    opacity: 0;
+    height: 0;
+    display: none;
+
+    transition: .5s linear;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+
+    margin: 0 auto;
+
+    margin-top: 30px;
+
+    border-radius: 60px;
+
+    background-color: #fff;
+}
+
+.add-presentation-show{
+    opacity: 1 !important;
+    height: 400px !important;
+
+    z-index: 10 !important;
+
+    transition: .5s linear;
+}
+
+.dashboard-form{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    align-items: center;
 }

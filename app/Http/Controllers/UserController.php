@@ -15,6 +15,15 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function showRegisterPage(){
+        return view ('register');
+    }
+
+    public function showLoginPage(){
+        return view ('login');
+    }
+
+
     public function showProfile(){
 
         return view('profile', array('user' => Auth::user()));

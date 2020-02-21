@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="4.7627096mm"
+   height="4.7627096mm"
+   viewBox="0 0 4.7627096 4.7627096"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="edit.svg">
+  <defs
+     id="defs2">
+    <style
+       id="style10">.a{fill:#e94c55;}.b,.c{fill:#fff;}.b{font-size:18px;font-family:GalanoGrotesque-Regular, Galano Grotesque;}</style>
+    <style
+       id="style38">.a{fill:#e94c55;}.b,.c{fill:#fff;}.b{font-size:18px;font-family:GalanoGrotesque-Regular, Galano Grotesque;}</style>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="267.05209"
+     inkscape:cy="98.959071"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g61"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1137"
+     inkscape:window-x="1672"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-4.0280399,-322.24145)">
+    <g
+       id="g36"
+       transform="matrix(0.26458333,0,0,0.26458333,87.312501,255.8006)">
+      <g
+         id="g20"
+         transform="translate(66,0.654)">
+        <rect
+           id="rect14"
+           transform="translate(-66,-0.654)"
+           rx="30"
+           height="60"
+           width="300"
+           class="a"
+           x="0"
+           y="0"
+           style="fill:#e94c55" />
+        <text
+           id="text18"
+           transform="translate(92.022,35.346)"
+           class="b"
+           style="font-size:18px;font-family:GalanoGrotesque-Regular, 'Galano Grotesque';fill:#ffffff">
+          <tspan
+             id="tspan16"
+             y="0"
+             x="-90.594002">Pokreni prezentaciju</tspan>
+        </text>
+      </g>
+      <path
+         id="path22"
+         d="m -166.46386,-32.585144 a 3.342,3.342 0 1 1 3.342,3.342 3.342,3.342 0 0 1 -3.342,-3.342 z m 7.32,-7.349 a 8.358,8.358 0 0 1 0,14.7 14.079,14.079 0 0 0 1.871,-7.349 14.079,14.079 0 0 0 -1.871,-7.349 z m -9.826,7.349 a 14.079,14.079 0 0 0 1.87,7.349 8.358,8.358 0 0 1 0,-14.7 14.079,14.079 0 0 0 -1.87,7.351 z m -5.013,0 a 17.938,17.938 0 0 0 3.672,11.272 13.371,13.371 0 0 1 0,-22.544 17.938,17.938 0 0 0 -3.672,11.272 z m 18.051,-11.272 a 13.371,13.371 0 0 1 0,22.544 17.938,17.938 0 0 0 3.672,-11.272 17.938,17.938 0 0 0 -3.672,-11.272 z"
+         class="c"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff" />
+      <g
+         id="g61"
+         transform="translate(-162.91837,313.68686)">
+        <rect
+           id="rect42"
+           rx="30"
+           height="60"
+           width="300"
+           class="a"
+           x="0"
+           y="0"
+           style="fill:#e94c55" />
+        <text
+           id="text46"
+           transform="translate(150.022,36)"
+           class="b"
+           style="font-size:18px;font-family:GalanoGrotesque-Regular, 'Galano Grotesque';fill:#ffffff">
+          <tspan
+             id="tspan44"
+             y="0"
+             x="-80.748001">Uredi prezentaciju</tspan>
+        </text>
+        <path
+           id="path48"
+           d="m -151.85755,-48.321036 v 3.75 h 3.75 l 11.06,-11.06 -3.75,-3.75 z m 17.71,-10.21 a 1,1 0 0 0 0,-1.41 l -2.34,-2.34 a 1,1 0 0 0 -1.41,0 l -1.83,1.83 3.75,3.75 z"
+           class="c"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+      </g>
+    </g>
+  </g>
+</svg>

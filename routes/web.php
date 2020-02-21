@@ -42,13 +42,18 @@ Route::post('/login', 'Auth\LoginController@login');
 
 //Logout
 Route::post('/logout', 'Auth\LoginController@logout');
+Route::get('/logout', 'Auth\LoginController@logout');
 
+//Prijava i registracija
+Route::get('/registracija', 'UserController@showRegisterPage');
+Route::get('/prijava', 'UserController@showLoginPage');
 
 //Profil
 Route::get('/profile', 'UserController@showProfile')->middleware(Redirect::class);
 Route::post('/profile', 'UserController@updateAvatar')->middleware(Redirect::class);
 
 //Dodavanje prezentacije
+Route::get('/dodajprezentaciju', 'DashboardController@add')->middleware(Redirect::class);;
 Route::post('/addpresentation', 'DashboardController@addPresentation')->middleware(Redirect::class);
 
 //Brisanje prezentacije
