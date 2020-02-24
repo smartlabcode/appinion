@@ -3,19 +3,36 @@
     @foreach($data['prezentacije'] as $prezentacije)
         @foreach($prezentacije as $prezentacija)
         <div class="prezentacija-container" id="prezentacija-container">
-            <img src="{{ asset('/assets/images/body/pogodnosti/Path264.svg') }}">
-            <h3 id='{{ $prezentacija->ime_prezentacije }}'>{{ $prezentacija->ime_prezentacije }} </h3>
+            <div class="prezentacija-element-div">
+                <img src="{{ asset('/assets/images/body/pogodnosti/Path264.svg') }}">
+            </div>
+
+            <div class="prezentacija-element-div">
+                <h3 id='{{ $prezentacija->ime_prezentacije }}'>{{ $prezentacija->ime_prezentacije }} </h3>
+            </div>
+
             <div class="grey-line"></div>
-            <img src="{{ asset('/assets/images/app/key-img.svg') }}">
-            <p id="{{ $prezentacija->gen_kod }}">{{ $prezentacija->gen_kod }}</p>
-            <a href='/presentation/{{$prezentacija->gen_kod}}' ><div class="prezentacija-btn">
-                <img src="{{ asset('/assets/images/app/run.svg') }}">
-                <p>Pokreni prezentaciju</p>
-            </div></a>
-            <a href='/presentationdelete/{{ $prezentacija->gen_kod }}' ><div class="prezentacija-btn">
-                <img src="{{ asset('/assets/images/app/edit.svg') }}">
-                <p>Uredi prezentaciju</p>
-            </div></a>
+            <div class="prezentacija-element-div">
+                <img src="{{ asset('/assets/images/app/key-img.svg') }}">
+            </div>
+
+            <div class="prezentacija-element-div">
+                <p id="{{ $prezentacija->gen_kod }}">{{ $prezentacija->gen_kod }}</p>
+            </div>
+
+            <div class="prezentacija-element-div">
+                <a href='/pitanje/{{$prezentacija->gen_kod}}/0' ><div class="prezentacija-btn">
+                    <img src="{{ asset('/assets/images/app/run.svg') }}">
+                    <p>Pokreni prezentaciju</p>
+                </div></a>
+            </div>
+
+            <div class="prezentacija-element-div">
+                <a href='/presentation/{{$prezentacija->gen_kod}}' ><div class="prezentacija-btn">
+                    <img src="{{ asset('/assets/images/app/edit.svg') }}">
+                    <p>Uredi prezentaciju</p>
+                </div></a>
+            </div>
         </div>
         @endforeach
     @endforeach
@@ -25,33 +42,58 @@
     </div>
 
     <div id='add-presentation-form-container'>
-        <form class='dashboard-form' method='POST' action='/addpresentation'>
-            @csrf
-            <img src="{{ asset('/assets/images/body/pogodnosti/Path264.svg') }}">
+        <div id="hide-container">
+            <form class='dashboard-form' method='POST' action='/addpresentation'>
+                @csrf
+                <div class="form-element">
+                    <img src="{{ asset('/assets/images/body/pogodnosti/Path264.svg') }}">
+                </div>
 
-            <label for='name'>Naziv prezentacije:</label>
-            <input type='text' class='form-control' id='presentation-name' name='presentationname' required></input>
-            <div class='presentation-form-group'>
-                <input type='submit' class='form-control' id='submit' name='submit' value="Dodaj prezentaciju"></input>
-            </div>
-        </form>
+                <div class="purple-line"></div>
+
+                <div class="form-element">
+                    <label for='name'>Naziv prezentacije:</label>
+                </div>
+
+                <div class="form-element">
+                    <input type='text' class='form-control' id='presentation-name' name='presentationname' placeholder='Naziv prezentacije' required></input>
+                </div>
+                <div class='form-element'>
+                    <input type='submit' class='form-control' id='submit' name='submit' value="Dodaj prezentaciju"></input>
+                </div>
+            </form>
+        </div>
     </div>
 
     <script>
         var prezentacije = document.getElementById('prezentacije-container');
+        var elementiprezentacije = document.getElementsByClassName('prezentacija-element-div');
         var dodajPrezentaciju = document.getElementById('add-presentation-form-container');
         var sviElementi = document.getElementsByClassName('prezentacija-container');
+        var container = document.getElementById('hide-container');
+
         function addPresentation(){
 
-            for(var i = 0; i<sviElementi.length; i++){
-                sviElementi[i].classList.add('prezentacije-hide');
+            for(var i = 0; i<elementiprezentacije.length; i++){
+                elementiprezentacije[i].classList.add('prezentacija-element-div-hide');
             }
+
+            setTimeout(() => {
+                for(var i = 0; i<sviElementi.length; i++){
+                    sviElementi[i].classList.add('prezentacije-hide');
+                }
+            }, 300);
+
 
             setTimeout(() => {
                 dodajPrezentaciju.classList.add('add-presentation-show');
                 prezentacije.classList.add('prezentacije-hide');
                 prezentacije.style.display='none';
-            }, 500);
+            }, 600);
+
+            setTimeout(() => {
+                container.classList.add('hide-container-show');
+            }, (900));
 
         }
         

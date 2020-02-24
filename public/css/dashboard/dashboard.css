@@ -33,14 +33,14 @@ body{
 
     padding: 30px;
 
-    transition: .5s linear;
+    transition: .3s linear;
 }
 
 .prezentacije-hide{
     height: 0 !important;
-    opacity: 0 !important;
+    /*opacity: 0 !important;*/
 
-    transition: .5s linear;
+    transition: .3s linear;
 }
 
 .prezentacija-container{
@@ -111,7 +111,7 @@ body{
     height: 0;
     display: none;
 
-    transition: .5s linear;
+    transition: .3s linear;
 
     display: flex;
     flex-direction: column;
@@ -135,13 +135,89 @@ body{
 
     z-index: 10 !important;
 
-    transition: .5s linear;
+    transition: .3s linear;
+}
+
+#hide-container{
+    display: none;
+    width: 100%;
+    transition: 5s linear;
+}
+
+.hide-container-show{
+    display: flex !important;
+    width: 100%;
+    transition: 5s linear;
 }
 
 .dashboard-form{
+
+    width: 100%;
+
     display: flex;
     flex-direction: column;
 
     justify-content: space-between;
     align-items: center;
+}
+
+.dashboard-form label{
+    font-size: 22pt;
+    color: #4C3056;
+}
+
+.form-element{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    width: 100%;
+}
+
+#presentation-name{
+    width: 80%;
+    border: 2px solid #4C3056;
+    height: 40px;
+
+    border-radius: 20px;
+
+    font-size: 16pt;
+
+    padding: 0 10px;
+}
+
+#submit{
+    width: 160px;
+    height: 40px;
+
+    border: none;
+
+    background-color: #E94C55;
+    color: #fff;
+
+    border-radius: 20px;
+}
+
+.purple-line{
+    width: 50px;
+    border: 1px solid #4C3056;
+
+}
+
+.prezentacija-element-div{
+    opacity: 1;
+    transition: 0.3s linear;
+}
+
+.prezentacija-element-div-hide{
+
+    opacity: 0;
+    transition: 0.3s linear;
+
+}
+
+#add-presentation-small:hover{
+    cursor: pointer;
 }

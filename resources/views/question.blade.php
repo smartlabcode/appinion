@@ -11,11 +11,20 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Style -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard/dashboard.css') }}" >
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard/question.css') }}" >
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     </head>
     <body>
+
+    <header>
+        <div id='header-container'>
+            <div id='header-title-container'>
+                <p>Naziv prezentacije</p>
+                <h3> {{DB::table('prezentacije')->where('gen_kod', $data[$i]->id_prezentacije)->pluck('ime_prezentacije')[0]}} </h3>
+            </div>
+        </div>
+    </header>
 
 
     <div id='page-container'>
@@ -23,7 +32,6 @@
     <div style="width:600px;">
     <canvas id="questionChart" ></canvas>
     </div>
-        
         
 
         <script>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="4.1722145mm"
+   height="4.1724792mm"
+   viewBox="0 0 4.1722145 4.1724792"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="spremi.svg">
+  <defs
+     id="defs2">
+    <style
+       id="style10">.a{fill:#e94c55;}.b,.c{fill:#fff;}.b{font-size:20px;font-family:GalanoGrotesque-Regular, Galano Grotesque;}</style>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.959798"
+     inkscape:cx="47.752342"
+     inkscape:cy="-20.956717"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g22"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1137"
+     inkscape:window-x="1672"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(143.9031,-222.26509)">
+    <g
+       id="g36"
+       transform="matrix(0.26458333,0,0,0.26458333,-130.60967,225.5625)">
+      <path
+         id="path14"
+         d="m 26.5,0 h 100 c 14.636,0 26.5,13.431 26.5,30 0,16.569 -11.864,30 -26.5,30 H 26.5 C 11.864,60 0,46.569 0,30 0,13.431 11.864,0 26.5,0 Z"
+         class="a"
+         inkscape:connector-curvature="0"
+         style="fill:#e94c55" />
+      <g
+         id="g22"
+         transform="translate(35.115,18.581)">
+        <text
+           id="text18"
+           transform="translate(52.76,17)"
+           class="b"
+           style="font-size:20px;font-family:GalanoGrotesque-Regular, 'Galano Grotesque';fill:#ffffff">
+          <tspan
+             id="tspan16"
+             y="0"
+             x="-34.73">Spremi</tspan>
+        </text>
+        <path
+           id="path20"
+           d="m -73.092891,-31.043649 h -10.513 a 1.752,1.752 0 0 0 -1.752,1.752 v 12.265 a 1.752,1.752 0 0 0 1.752,1.753 h 12.265 a 1.757,1.757 0 0 0 1.752,-1.752 v -10.518 z m -4.38,14.017 a 2.628,2.628 0 1 1 2.628,-2.628 2.625,2.625 0 0 1 -2.628,2.628 z m 2.628,-8.761 h -8.761 v -3.5 h 8.761 z"
+           class="c"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+      </g>
+    </g>
+  </g>
+</svg>

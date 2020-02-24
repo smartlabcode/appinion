@@ -25,10 +25,12 @@
     </div>
 
     <div class="menu-container">
-        <div class="menu-element"><a class="header-link" href="/dodajprezentaciju"><div id="add-presentation-small">
+        @if(Request::path() == '/')
+        <div class="menu-element"><a class="header-link" onclick="addPresentation()"><div id="add-presentation-small">
             <img src="{{ asset('/assets/images/app/add.svg') }}">
             <p>Dodaj prezentaciju</p>
         </div></a></div>
+        @endif
         <div class="menu-element" id="dropdown-container">
             <div class="dropdown">
                 <span><img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:50px; height:50px; border-radius: 50%"></img><p>Zdravo {{ Auth::user()->name }} !</p><img src="{{ asset('/assets/images/app/dropdown-arrow.svg') }}" style="width:10px; height:10px; border-radius: 50%"></img></span>
