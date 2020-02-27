@@ -25,7 +25,6 @@ Route::get('/', function () {
         );
 
         return view('welcome')->with('data', $data);
-        
 
     }
 
@@ -74,6 +73,8 @@ Route::post('/pitanje/getAnswers', 'ShowQuestionController@getAnswers');
 Route::post('/editQuestion', 'QuestionController@editQuestion')->middleware(Redirect::class);
 Route::get('/questiondelete/{presentationid}/{emailkorisnika}/{idpitanja}', 'QuestionController@deleteQuestion')->middleware(Redirect::class);
 
+//Set question visible to false
+Route::post('/setquestiontofalse', 'ShowQuestionController@setQuestionsToFalse')->middleware(Redirect::class);
 
 //Android serverside
 Route::post('/getandroidquestion', 'AndroidController@getQuestion');

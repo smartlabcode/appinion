@@ -37,7 +37,7 @@
             </div>
         </div>
         <div id='exit-container'>
-            <a href="/"><img id='exit-icon' src="{{ asset('/assets/images/pitanje/exit-image.svg') }}"><img id='x-icon' src="{{ asset('/assets/images/pitanje/ic_clear_24px.svg') }}"></a>
+            <a onclick="setQuestionsToFalse()"><img id='exit-icon' src="{{ asset('/assets/images/pitanje/exit-image.svg') }}"><img id='x-icon' src="{{ asset('/assets/images/pitanje/ic_clear_24px.svg') }}"></a>
         </div>
     </header>
 
@@ -112,8 +112,6 @@
             @endif
         </div>
     
-
-    
     </div>
 
     <script>
@@ -130,6 +128,33 @@
             }
         }
         
+    </script>
+
+    <script>
+
+        function setQuestionsToFalse(){
+
+            var idpitanja = "{{ $data[$i]->id }}";
+
+            $.ajax({
+                type:'POST',
+                url:"{{action('ShowQuestionController@setQuestionsToFalse')}}",
+                data:{
+                    '_token':'{{ csrf_token() }}',
+                    'id': id,
+                    'pitanje': pitanje.innerHTML,
+                    'odg1': odg1.innerHTML,
+                    'odg2': odg2.innerHTML,
+                    'odg3': odg3.innerHTML,
+                    'odg4': odg4.innerHTML,
+                },
+                success: function(data) {
+                    $(pitanje).text(data.msg);
+                }
+            });
+
+        }
+
     </script>
 
     </body>
