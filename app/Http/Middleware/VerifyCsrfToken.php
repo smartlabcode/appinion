@@ -26,5 +26,6 @@ class VerifyCsrfToken extends Middleware
         '/getpresentations',
         '/joinpresentation',
         '/checkforanswers',
+        '/pitanje/getAnswers',
     ];
 }

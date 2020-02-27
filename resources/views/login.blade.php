@@ -11,8 +11,6 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Style -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard/landing.css') }}" >
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard/dashboard.css') }}" >
         <link rel="stylesheet" type="text/css" href="{{ asset('css/header.css') }}" >
         <link rel="stylesheet" type="text/css" href="{{ asset('css/footer.css') }}" >
         <link rel="stylesheet" type="text/css" href="{{ asset('css/auth.css') }}" >
@@ -50,9 +48,9 @@
             </div>
         </form>
     </div>
-
+    <footer>@include('layouts.footer')</footer>
 </body>
 
-<footer>@include('layouts.footer')</footer>
+
 
 </html>

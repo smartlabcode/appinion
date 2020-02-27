@@ -1,8 +1,4 @@
 body{
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-
     background-image: url('../../assets/images/background-images/bg.svg');
     background-position-y: -100px;
     background-size: 100%;
@@ -10,26 +6,40 @@ body{
 
     font-family: 'Source Sans Pro', sans-serif;
 
-    max-width: 1440px;
+    /*max-width: 1440px;*/
 
     overflow-x: hidden;
+
+    margin: 0 auto;
 }
 
 #page-container{
     position: relative;
     min-height: 100vh;
+
+    max-width: 1440px;
+    margin: 0 auto;
+
 }
 
 #content-wrap{
     padding-bottom: 2.5rem;
 }
 
+header{
+
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
 footer{
-    position: absolute;
-    width: 80%;
     height: 15rem;
     margin: 0 auto;
-    margin-top: 15rem;    
+    margin-top: 12rem;    
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -107,7 +117,7 @@ button{
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 280px;
+    margin-top: 450px;
 }
 
 #pogodnosti-title-container{
@@ -166,6 +176,10 @@ button{
 .pogodnosti-card-text-container{
     width: 80%;
     margin: 0 auto;
+}
+
+.pogodnosti-card-text-container p{
+    text-align: center;
 }
 
 /**/
@@ -326,7 +340,7 @@ button{
 }
 
 #kontakt-background-image{
-    width: 1920px;
+    width: 3840px;
     height: 792px;
     margin-left: -10%;
     object-fit: cover;

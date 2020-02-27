@@ -41,7 +41,7 @@
                         <!--<div id="auth-container"></div>-->
                         <div id="title-buttons-container">
                             <div id="title-container">
-                                <h1>Lorem ipsum ist est</h1>
+                                <h1>Jednim klikom poveži se sa publikom</h1>
                                 <h4>Lorem ipsum ist est</h4>
                             </div>
                             <div id="buttons-container">
@@ -72,7 +72,7 @@
 
                     <div id="pogodnosti-content-container">
                         <div id="pogodnosti-text-container">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Želite veću uključenost svoje publike u prezentaciju? Želite da zadržite njihovu pažnju? <br> Appionion je aplikacija koja će vam pomoći u tome! Kreirajte pitanja i u željenom trenutko dozvolite publici da odgovara na njih. Grafički prikaz grupnih rezultata će biti vidljiv odmah na platnu.</p>
                         </div>
 
                         <div id="pogodnosti-cards-container">
@@ -81,10 +81,10 @@
                                     <img class="pogodnosti-icon-class" src="{{ asset('/assets/images/body/pogodnosti/postit.svg') }}">
                                 </div>
                                 <div class="pogodnosti-card-title-container">
-                                    <h3>Lorem Ipsum</h3>
+                                    <h3>Uključenost</h3>
                                 </div>
                                 <div class="pogodnosti-card-text-container">
-                                    <p>Sometimes the simplest things are the hardest to find. So we created a new line for everyday life</p>
+                                    <p>Kroz interakciju s publikom osigurajte veću uključenost učesnika prezentacije.</p>
                                 </div>
                             </div>
 
@@ -93,10 +93,10 @@
                                     <img class="pogodnosti-icon-class" src="{{ asset('/assets/images/body/pogodnosti/counsel.svg') }}">
                                 </div>
                                 <div class="pogodnosti-card-title-container">
-                                    <h3>Lorem Ipsum</h3>
+                                    <h3>Zainteresovanost</h3>
                                 </div>
                                 <div class="pogodnosti-card-text-container">
-                                    <p>Sometimes the simplest things are the hardest to find. So we created a new line for everyday life</p>
+                                    <p>Većim uključenjem razbudite interes publike za vašu prezentaciju.</p>
                                 </div>
                             </div>
 
@@ -105,10 +105,10 @@
                                     <img class="pogodnosti-icon-class" src="{{ asset('/assets/images/body/pogodnosti/advice.svg') }}">
                                 </div>
                                 <div class="pogodnosti-card-title-container">
-                                    <h3>Lorem Ipsum</h3>
+                                    <h3>Pažnja</h3>
                                 </div>
                                 <div class="pogodnosti-card-text-container">
-                                    <p>Sometimes the simplest things are the hardest to find. So we created a new line for everyday life</p>
+                                    <p>Umjerite pažnju auditorija na željene teme i ispitajte njihovo mišljenje i znanje.</p>
                                 </div>
                             </div>
 
@@ -212,11 +212,12 @@
                 @endif
             </div>
         </div>
-
-
-        <footer>
+    @if(!Auth::user())    
+    <footer>
         @include('layouts.footer')
-        </footer>
-
+    </footer>
+    @endif
     </body>
+
+
 </html>

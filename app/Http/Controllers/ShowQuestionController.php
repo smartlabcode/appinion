@@ -15,69 +15,55 @@ use Illuminate\Http\Request;
 class ShowQuestionController extends Controller
 {
 
-    public function getAnswers(){
+    public function getAnswers(Request $request){
 
-        /*$odg1 = DB::table('odgovori')
-            ->where('odgovor', 'odg1')
-            ->get();
-
-        $odg2 = DB::table('odgovori')
-            ->where('odgovor', 'odg2')
-            ->get();
-
-        $odg3 = DB::table('odgovori')
-            ->where('odgovor', 'odg3')
-            ->get();
-
-        $odg4 = DB::table('odgovori')
-            ->where('odgovor', 'odg4')
-            ->get();
-
-        $data = [count($odg1), count($odg2), count($odg3), count($odg4)];
-        //dd($data);*/
-
-        $data = DB::table('odgovori')
-            ->get();
-        return ($data);
-
-    }
-
-    public function showQuestionPage(Request $request, $idprezentacije, $i){
-
-
-        $data = DB::table('pitanja')
-            ->where('id_prezentacije', $idprezentacije)
-            ->get();
-
-        
         $odgovoriZaPitanje = [];
         $odg1 = 0;
         $odg2 = 0;
         $odg3 = 0;
         $odg4 = 0;
 
+        //id prezentacije
+        $idprezentacije = $request->idPrezentacije;
 
-        for($k = 0; $k<count($this->getAnswers());$k++){
+        //id pitanja
+        $idpitanja = DB::table('pitanja')->where('pitanje', $request->textPitanja)->pluck('id');
+        $idpitanja = intval($idpitanja[0]);
 
-            $odgovor = $this->getAnswers();
-            
-            if($odgovor[$k]->id_prezentacije == $idprezentacije && $data[$i]->id == $odgovor[$k]->id_pitanja){
+        $odgovori = DB::table('odgovori')
+            ->where('id_pitanja', $idpitanja)
+            ->where('id_prezentacije', $idprezentacije)
+            ->get();
 
-                if($odgovor[$k]->odgovor == "odg1"){
-                    $odg1++;
-                }
-                if($odgovor[$k]->odgovor == "odg2"){
-                    $odg2++;
-                }
-                if($odgovor[$k]->odgovor == "odg3"){
-                    $odg3++;
-                }
-                if($odgovor[$k]->odgovor == "odg4"){
-                    $odg4++;
-                }
-
+        foreach($odgovori as $odgovor){
+            if($odgovor->odgovor == 'odg1'){
+                $odg1++;
+            }
+            if($odgovor->odgovor == 'odg2'){
+                $odg2++;
+            }
+            if($odgovor->odgovor == 'odg3'){
+                $odg3++;
+            }
+            if($odgovor->odgovor == 'odg4'){
+                $odg4++;
             }
         }
+
+
+        $odgovoriZaPitanje = [$odg1, $odg2, $odg3, $odg4];
+
+        $odgovoriZaPitanje = \json_encode($odgovoriZaPitanje);
+
+        return \response ($odgovoriZaPitanje);
+    }
+
+    public function showQuestionPage(Request $request, $idprezentacije, $i){
+
+        $data = DB::table('pitanja')
+            ->where('id_prezentacije', $idprezentacije)
+            ->get();
+
 
         $this->setQuestionsToFalse($idprezentacije);
 
@@ -86,13 +72,11 @@ class ShowQuestionController extends Controller
         $this->setQuestionToTrue($idpitanja);
 
 
-        $odgovoriZaPitanje = [$odg1, $odg2, $odg3, $odg4];
-
         if($i<count($data)){
-            return view('question')->with('data', $data)->with('i', $i)->with('idprezentacije', $idprezentacije)->with('odgovoriZaPitanje', $odgovoriZaPitanje);
+            return view('question')->with('data', $data)->with('i', $i)->with('idprezentacije', $idprezentacije);
         }
         else if($i == count($data)){
-            return view('question')->with('data', $data)->with('i', "end")->with('idprezentacije', $idprezentacije)->with('odgovoriZaPitanje', $odgovoriZaPitanje);
+            return view('question')->with('data', $data)->with('i', "end")->with('idprezentacije', $idprezentacije);
         }
     }
 

@@ -53,7 +53,7 @@ class AndroidController extends Controller
         foreach($pitanja as $pitanje){
             if($pitanje->vidljivo == true){
                 return \response()
-                    ->json(["Vidljivo:" => 1, "id_pitanja"=>$pitanje->id, "presentatioNID"=>$request->id]);
+                    ->json(["Vidljivo:" => 1, "id_pitanja"=>$pitanje->id, "presentatioNID"=>$request->id, "Pitanje"=>$pitanje->pitanje]);
             }
         }
 

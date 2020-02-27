@@ -1,25 +1,43 @@
 body{
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-
 
     background-color: #4C3056;
     background-image: url('../../assets/images/background-images/Subtraction14.svg');
-    background-size: 60%;
+    background-size: 100%;
     background-position-y: -400px;
     background-position-x: 1200px;
     background-repeat: no-repeat;
 
     font-family: 'Source Sans Pro', sans-serif;
 
-    max-width: 1440px;
+    /*max-width: 1440px;*/
 
     overflow-x: hidden;
+
+    margin: 0 auto;
 }
 
+header{
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+footer{
+    height: 15rem;
+    margin: 0 auto;
+    margin-top: 0rem;
+    background: #fff;  
+}
+
+
 #app-container{
-    margin-bottom: 100px;
+    position: relative;
+    margin-left: 5%;
+    margin-right: 5%;
+
 }
 
 #prezentacije-container{

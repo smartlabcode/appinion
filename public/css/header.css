@@ -7,6 +7,8 @@
     margin-top: 20px;
 
     height: 10vh;
+
+    width: 90%;
 }
 
 .logo-container{
@@ -103,7 +105,7 @@ a{
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 
-    transition: .5s linear;
+    transition: .2s linear;
 }
 
 
@@ -116,14 +118,14 @@ a{
     margin-bottom: 20px;
     margin-left: 15px;
 
-    transition: .5s linear;
+    transition: .2s linear;
 }
 
 .dropdown-content a:hover{
     font-size: 15pt;
     font-weight: bold;
 
-    transition: .5s linear;
+    transition: .2s linear;
 }
 
 .dropdown:hover .dropdown-content {
@@ -131,7 +133,7 @@ a{
     height: 130px;
     opacity: 1;
 
-    transition: .5s linear;
+    transition: .2s linear;
 }
 
 .dropdown span{

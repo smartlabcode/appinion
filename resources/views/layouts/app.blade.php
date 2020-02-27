@@ -94,8 +94,8 @@
             setTimeout(() => {
                 container.classList.add('hide-container-show');
             }, (900));
-
+            
         }
-        
     </script>
+
 </div>

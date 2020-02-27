@@ -1,6 +1,4 @@
 .footer-container{
-
-    width: 100%;
     background-color: #ffffff;
 
     display: flex;
@@ -10,13 +8,15 @@
     justify-content: space-evenly;
     align-items: center;
 
+    width: 90%;
+
     height: 15rem;
+
+    margin: 0 auto;
 }
 
 .footer-column{
     width: 15%;
-
-    height: 250px;
 
     margin: 0 auto;
 }

@@ -68,6 +68,8 @@ Route::post('/addQuestion', 'QuestionController@addQuestion')->middleware(Redire
 //Preview pitanja i odgovora
 Route::get('/pitanje/{idprezentacije}/{i}', 'ShowQuestionController@showQuestionPage')->middleware(Redirect::class);
 
+Route::post('/pitanje/getAnswers', 'ShowQuestionController@getAnswers');
+
 //Upravljanje pitanja i odgovora
 Route::post('/editQuestion', 'QuestionController@editQuestion')->middleware(Redirect::class);
 Route::get('/questiondelete/{presentationid}/{emailkorisnika}/{idpitanja}', 'QuestionController@deleteQuestion')->middleware(Redirect::class);

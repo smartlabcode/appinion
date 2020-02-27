@@ -1,5 +1,32 @@
 body{
-    background-position-y: 0 !important;
+    background-color: #4C3056;
+    background-image: url('../../assets/images/background-images/Subtraction14.svg');
+    background-size: 100%;
+    background-position-y: -400px;
+    background-position-x: 1200px;
+    background-repeat: no-repeat;
+
+    font-family: 'Source Sans Pro', sans-serif;
+
+    /*max-width: 1440px;*/
+
+    overflow-x: hidden;
+
+    margin: 0 auto;
+}
+
+footer{
+    height: 15rem;
+    margin: 0 auto;
+    background: #fff;
+}
+
+header{
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .auth-form{
@@ -101,5 +128,5 @@ body{
 }
 
 .login-form-container{
-    margin-bottom: 200px;
+    margin-bottom: 14rem;
 }
