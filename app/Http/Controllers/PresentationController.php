@@ -16,6 +16,7 @@ class PresentationController extends Controller
             $showTable = true;
         }
 
+
         $data = DB::table('prezentacije')
             ->where('gen_kod', $idprezentacije)
             ->get();

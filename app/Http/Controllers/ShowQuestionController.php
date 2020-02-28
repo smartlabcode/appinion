@@ -99,4 +99,19 @@ class ShowQuestionController extends Controller
             ->update(['vidljivo' => true]);
 
     }
+
+    public function startPresentationPage(Request $request, $idprezentacije){
+        $i = 0;
+
+        $data = DB::table('pitanja')
+            ->where('id_prezentacije', $idprezentacije)
+            ->get();
+
+        $this->setQuestionsToFalse($idprezentacije);
+
+        $i = count($data);
+
+        return view('startpresentation')->with('i', $i)->with('idprezentacije', $idprezentacije);
+
+    }
 }

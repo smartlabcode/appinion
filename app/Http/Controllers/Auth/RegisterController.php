@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use DB;
 
 class RegisterController extends Controller
 {
@@ -67,6 +68,17 @@ class RegisterController extends Controller
      */
     protected function create(Request $data)
     {
+
+        $catchEmail = $data->email;
+
+        $allUsers = DB::table('users')->get();
+
+        foreach($allUsers as $user){
+            if($user->email == $catchEmail){
+                return redirect('/');
+            }
+        }
+
         User::create([
             'name' => $data->name,
             'last_name' => $data->last_name,

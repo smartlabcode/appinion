@@ -64,6 +64,9 @@ Route::get('/presentation/{idprezentacije}', 'PresentationController@showPresent
 //Dodavanje pitanja
 Route::post('/addQuestion', 'QuestionController@addQuestion')->middleware(Redirect::class);
 
+//Pokretanje prezentacije
+Route::get('/pitanje/{idprezentacije}/', 'ShowQuestionController@startPresentationPage')->middleware(Redirect::class);
+
 //Preview pitanja i odgovora
 Route::get('/pitanje/{idprezentacije}/{i}', 'ShowQuestionController@showQuestionPage')->middleware(Redirect::class);
 

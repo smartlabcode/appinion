@@ -17,11 +17,11 @@
             </div>
 
             <div class="prezentacija-element-div">
-                <p id="{{ $prezentacija->gen_kod }}">{{ $prezentacija->gen_kod }}</p>
+                <span id="{{ $prezentacija->gen_kod }}">{{ $prezentacija->gen_kod }}</span>
             </div>
 
             <div class="prezentacija-element-div">
-                <a href='/pitanje/{{$prezentacija->gen_kod}}/0' ><div class="prezentacija-btn">
+                <a href='/pitanje/{{$prezentacija->gen_kod}}' ><div class="prezentacija-btn">
                     <img src="{{ asset('/assets/images/app/run.svg') }}">
                     <p>Pokreni prezentaciju</p>
                 </div></a>

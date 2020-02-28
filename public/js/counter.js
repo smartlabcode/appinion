@@ -16,7 +16,7 @@ const COLOR_CODES = {
   }
 };
 
-const TIME_LIMIT = 10;
+const TIME_LIMIT = 5;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -200,16 +200,23 @@ function drawChart(odg1, odg2, odg3, odg4){
             },
         
             options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            fontColor: '#4C3056',
-                            fontStyle: 'bold',
-                        }
-                    }]
+              layout:{
+                padding:{
+                  top: 10,
                 }
-            }
+              },
+              scales: {
+                  yAxes: [{
+                      gridLines:{
+                        display:false,
+                      },
+                      display:false,
+                  }],
+                  xAxes:[{
+                    maxBarThickness: 80,
+                }]
+              }
+          }
         });
     }
     else if(odg3!=undefined && odg4==undefined){
@@ -244,14 +251,23 @@ function drawChart(odg1, odg2, odg3, odg4){
             },
         
             options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
+              layout:{
+                padding:{
+                  top: 10,
                 }
-            }
+              },
+              scales: {
+                  yAxes: [{
+                      gridLines:{
+                        display:false,
+                      },
+                      display:false,
+                  }],
+                  xAxes:[{
+                    maxBarThickness: 80,
+                }]
+              }
+          }
         });
     }
     else if(odg3!=undefined && odg4!=undefined){
@@ -288,14 +304,23 @@ function drawChart(odg1, odg2, odg3, odg4){
             },
         
             options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
+              layout:{
+                padding:{
+                  top: 10,
                 }
-            }
+              },
+              scales: {
+                  yAxes: [{
+                      gridLines:{
+                        display:false,
+                      },
+                      display:false,
+                  }],
+                  xAxes:[{
+                    maxBarThickness: 80,
+                }]
+              }
+          }
         });
     }
 

@@ -86,6 +86,10 @@ header{
     height: 400px;
 }
 
+#pitanje-all-container h3{
+    font-size: 22pt;
+}
+
 #sva-pitanja-container a{
     text-decoration: none;
 
@@ -146,6 +150,8 @@ header{
 
     justify-content: space-between;
     align-items: center;
+
+    font-size: 18pt;
 
 }
 

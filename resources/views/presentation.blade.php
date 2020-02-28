@@ -49,25 +49,43 @@
             @foreach($data['pitanja'] as $pitanja)
                 @if($pitanja->id_prezentacije == $data['prezentacija']->gen_kod)
                 <div class="pitanje-container">
-                    <div class="pitanje-class">
-                        <p>Pitanje {{++$i}}</p>
+                    <div id="pitanje-id-{{ $pitanja->id }}-minimized" class="pitanje-hidden-container">
+                        <div class='pitanje-hidden'>
+                            <h3>{{ $pitanja->pitanje }} </h3>
+                        </div>
+                        <div class="show-button-container">
+                            <a onclick="showQuestion({!! $pitanja->id !!})"><img id='show-button-icon' src="{{ asset('/assets/images/prezentacija/chevron.svg') }}"></a>
+                        </div>
                     </div>
-                    <p class="pitanje-class" id='pitanje-{{ $pitanja->id }}'>{{ $pitanja->pitanje }} </p> 
-                    <div class='horizontal-grey-line' style="margin-bottom: 30px"></div>              
-                    <p class="pitanje-class" id='odgovor1-{{ $pitanja->id }}'>{{ $pitanja->odgovor1  }} </p>
-                    <div class='horizontal-grey-line'></div>  
-                    <p class="pitanje-class" id='odgovor2-{{ $pitanja->id }}'>{{ $pitanja->odgovor2  }} </p>
-                    @if($pitanja->odgovor3 != ' ')
-                        <div class='horizontal-grey-line'></div>  
-                        <p class="pitanje-class" id='odgovor3-{{ $pitanja->id }}'>{{ $pitanja->odgovor3  }} </p>
-                    @endif
-                    @if($pitanja->odgovor4 != ' ')
-                        <div class='horizontal-grey-line'></div>  
-                        <p class="pitanje-class" id='odgovor4-{{ $pitanja->id }}'>{{ $pitanja->odgovor4  }} </p>
-                    @endif
-                    <div class="pitanja-buttons-container">
-                        <span><a onclick='changeQuestion({{$pitanja->id}})'><img id='button-icons' src="{{ asset('/assets/images/prezentacija/spremi.svg') }}"><p class='' id='pitanje-btn-{{ $pitanja->id }}'>Promijeni</p></a></span>
-                        <span><a href="/questiondelete/{{$data['prezentacija']->gen_kod}}/{{Auth::user()->email}}/{{$pitanja->id}}/" ><img id='button-icons' src="{{ asset('/assets/images/prezentacija/obrisi.svg') }}">Obriši</a></span>
+
+                    <div id="pitanje-id-{{ $pitanja->id }}-maximized" class="pitanje-extended">
+                        <div class="pitanje-title-container">
+                            <div class="pitanje-class pitanje-counter">
+                                <p>Pitanje {{++$i}}</p>
+                            </div>
+                            <div class="hide-button-container">
+                                <a onclick="hideQuestion({!! $pitanja->id !!})"><img id='hide-button-icon' src="{{ asset('/assets/images/prezentacija/chevron.svg') }}"></a>
+                            </div>
+                        </div>
+                        <div class="pitanje-content-container">
+                            <p class="pitanje-class" id='pitanje-{{ $pitanja->id }}'>{{ $pitanja->pitanje }} </p> 
+                            <div class='horizontal-grey-line' style="margin-bottom: 30px"></div>              
+                            <p class="pitanje-class" id='odgovor1-{{ $pitanja->id }}'>{{ $pitanja->odgovor1  }} </p>
+                            <div class='horizontal-grey-line'></div>  
+                            <p class="pitanje-class" id='odgovor2-{{ $pitanja->id }}'>{{ $pitanja->odgovor2  }} </p>
+                            @if($pitanja->odgovor3 != ' ')
+                                <div class='horizontal-grey-line'></div>  
+                                <p class="pitanje-class" id='odgovor3-{{ $pitanja->id }}'>{{ $pitanja->odgovor3  }} </p>
+                            @endif
+                            @if($pitanja->odgovor4 != ' ')
+                                <div class='horizontal-grey-line'></div>  
+                                <p class="pitanje-class" id='odgovor4-{{ $pitanja->id }}'>{{ $pitanja->odgovor4  }} </p>
+                            @endif
+                        </div>
+                        <div class="pitanja-buttons-container">
+                            <span><a onclick='changeQuestion({{$pitanja->id}})'><img id='button-icons' src="{{ asset('/assets/images/prezentacija/spremi.svg') }}"><p class='' id='pitanje-btn-{{ $pitanja->id }}'>Promijeni</p></a></span>
+                            <span><a href="/questiondelete/{{$data['prezentacija']->gen_kod}}/{{Auth::user()->email}}/{{$pitanja->id}}/" ><img id='button-icons' src="{{ asset('/assets/images/prezentacija/obrisi.svg') }}">Obriši</a></span>
+                        </div>
                     </div>
                 </div>
                 @endif
@@ -116,6 +134,21 @@
 </body>
     <script src="/js/app.js"></script>
     <script type="text/javascript" src="/js/frontend.js"></script>
+
+    <script>
+
+        function showQuestion(id){
+            document.getElementById('pitanje-id-'+id+'-minimized').style.display = 'none';
+            document.getElementById('pitanje-id-'+id+'-maximized').style.display = 'block';
+        }
+
+        function hideQuestion(id){
+            document.getElementById('pitanje-id-'+id+'-minimized').style.display = 'flex';
+            document.getElementById('pitanje-id-'+id+'-maximized').style.display = 'none';
+        }
+
+    </script>
+
     <script>
                 function changeQuestion(id){
                 var btn = document.getElementById('pitanje-btn-' + id);
