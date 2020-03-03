@@ -53,8 +53,8 @@ class CreateUsersTable extends Migration
             $table->string('pitanje');
             $table->string('odgovor1');
             $table->string('odgovor2');
-            $table->string('odgovor3');
-            $table->string('odgovor4');
+            $table->string('odgovor3')->nullable();
+            $table->string('odgovor4')->nullable();
             $table->boolean('vidljivo')->default(false);
 
         });

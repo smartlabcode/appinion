@@ -73,11 +73,11 @@
                             <p class="pitanje-class" id='odgovor1-{{ $pitanja->id }}'>{{ $pitanja->odgovor1  }} </p>
                             <div class='horizontal-grey-line'></div>  
                             <p class="pitanje-class" id='odgovor2-{{ $pitanja->id }}'>{{ $pitanja->odgovor2  }} </p>
-                            @if($pitanja->odgovor3 != ' ')
+                            @if($pitanja->odgovor3 != null)
                                 <div class='horizontal-grey-line'></div>  
                                 <p class="pitanje-class" id='odgovor3-{{ $pitanja->id }}'>{{ $pitanja->odgovor3  }} </p>
                             @endif
-                            @if($pitanja->odgovor4 != ' ')
+                            @if($pitanja->odgovor4 != null)
                                 <div class='horizontal-grey-line'></div>  
                                 <p class="pitanje-class" id='odgovor4-{{ $pitanja->id }}'>{{ $pitanja->odgovor4  }} </p>
                             @endif
@@ -180,13 +180,17 @@
                     if(document.getElementById('odgovor4-' + id) != null)
                         odg4.setAttribute('contenteditable', 'false');
 
-                        if(odg3.innerHTML != '  ' && odg4.innerHTML != '  '){
+                        if(odg3 != null && odg4 != null){
                             console.log('4');
+                            $.ajaxSetup({
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                    }
+                                });
                             $.ajax({
                                 type:'POST',
-                                url:"{{action('QuestionController@editQuestion')}}",
+                                url:"/editQuestion",
                                 data:{
-                                    '_token':'{{ csrf_token() }}',
                                     'id': id,
                                     'pitanje': pitanje.innerHTML,
                                     'odg1': odg1.innerHTML,
@@ -198,37 +202,42 @@
                                     $(pitanje).text(data.msg);
                                 }
                             });
-                        } else if(odg3.innerHTML != '  ' && odg4.innerHTML == '  '){
+                        } else if(odg3 != null && odg4 == null){
                             console.log('3');
+                            $.ajaxSetup({
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                    }
+                                });
                             $.ajax({
                                 type:'POST',
-                                url:"{{action('QuestionController@editQuestion')}}",
+                                url:"/editQuestion",
                                 data:{
-                                    '_token':'{{ csrf_token() }}',
                                     'id': id,
                                     'pitanje': pitanje.innerHTML,
                                     'odg1': odg1.innerHTML,
                                     'odg2': odg2.innerHTML,
                                     'odg3': odg3.innerHTML,
-                                    'odg4': ' ',
                                 },
                                 success: function(data) {
                                     $(pitanje).text(data.msg);
                                 }
                             });
-                        } else if(odg3.innerHTML == '  ' && odg4.innerHTML == '  '){
+                        } else if(odg3 == null && odg4 == null){
                             console.log('2');
+                            $.ajaxSetup({
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                    }
+                                });
                             $.ajax({
                                 type:'POST',
-                                url:"{{action('QuestionController@editQuestion')}}",
+                                url:"/editQuestion",
                                 data:{
-                                    '_token':'{{ csrf_token() }}',
                                     'id': id,
                                     'pitanje': pitanje.innerHTML,
                                     'odg1': odg1.innerHTML,
                                     'odg2': odg2.innerHTML,
-                                    'odg3': ' ',
-                                    'odg4': ' ',
                                 },
                                 success: function(data) {
                                     $(pitanje).text(data.msg);

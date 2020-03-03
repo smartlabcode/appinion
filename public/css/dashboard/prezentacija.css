@@ -144,6 +144,10 @@ a:hover{
 
 }
 
+.pitanje-container h3{
+    color: #E94C55;
+}
+
 .pitanje-class{
     margin-top: 30px;
 }
@@ -187,11 +191,11 @@ a:hover{
 
 .pitanje-content-container{
     margin-left: 80px;
+    margin-right: 80px;
 }
 
 .horizontal-grey-line{
     margin: 0 auto;
-    width: 90%;
     border: 1px solid rgba(217, 217, 217, 0.3);
 }
 

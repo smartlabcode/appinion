@@ -79,13 +79,16 @@ class RegisterController extends Controller
             }
         }
 
-        User::create([
+        $user = User::create([
             'name' => $data->name,
             'last_name' => $data->last_name,
             'email' => $data->email,
             'password' => Hash::make($data->password),
             'avatar' => '',
         ]);
+
+        $user->sendEmailVerificationNotification();
+
 
         return redirect('/');
     }

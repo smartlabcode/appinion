@@ -38,7 +38,7 @@
 
 
     <div class="register-form-container">
-        <form class='auth-form' method='POST' action='/register'>
+        <form class='auth-form' method='POST' action='/register' >
             @csrf
             <div class='form-group'>
                 <input type='text' class='form-control' id='name' name='name' placeholder="Ime" required></input>

@@ -63,12 +63,15 @@ class QuestionController extends Controller
 
     public function editQuestion(Request $data){
 
+
         $questionid = $data->id;
         $pitanje = $data->pitanje;
         $odg1 = $data->odg1;
         $odg2 = $data->odg2;
         $odg3 = $data->odg3;
         $odg4 = $data->odg4;
+
+        //dd($data->all());
 
         $updateDetails = [
             'pitanje' => $pitanje,
