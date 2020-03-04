@@ -1,0 +1,115 @@
+html{
+    height: 100%;
+}
+body{
+
+    background-color: #4C3056;
+    background-image: url('../../assets/images/background-images/Subtraction14.svg');
+    background-size: 100%;
+    background-position-y: -400px;
+    background-position-x: 1200px;
+    background-repeat: no-repeat;
+
+    font-family: 'Source Sans Pro', sans-serif;
+
+    /*max-width: 1440px;*/
+    height: 100%;
+    position: relative;
+
+    overflow-x: hidden;
+
+    margin: 0 auto;
+}
+
+header{
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+footer{
+
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    bottom: 0;  
+
+    margin-top: 120px;
+}
+
+#email-app-container{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+
+    margin-top: 160px;
+    max-width: 1440px;
+    margin-bottom: 160px;
+
+}
+
+#email-verification-container{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    margin: 0 auto;
+
+    width: 80%;
+
+}
+
+#email-verification-container p{
+    width: 60%;
+    text-align: center;
+    color: #fff;
+}
+
+#email-verification-container h1{
+    font-weight: 600;
+    color: #fff;
+}
+
+#email-verification-container div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+}
+
+.white-line{
+    width: 40px !important;
+    border: 1px solid #fff !important;
+}
+
+.d-inline button{
+
+    width: 200px;
+    height: 50px;
+
+    background-color: #E94C55;
+    color: #fff;
+
+    border-radius: 25px;
+
+    border:none;
+
+}
+
+#email-form-container{
+
+    margin-top: 60px !important;
+
+}

@@ -103,12 +103,18 @@
                     <span>Next</span>
                 </div></a>
             @else
+                @if($i==0)
+                <a style="opacity: 0;" href="/pitanje/{{ $idprezentacije }}/{{ $i-1 }}"><div class='question-controller' id='previous-question-controller'>
+                    <span>Previous</span>
+                </div></a>
+                @else
                 <a href="/pitanje/{{ $idprezentacije }}/{{ $i-1 }}"><div class='question-controller' id='previous-question-controller'>
                     <span>Previous</span>
                 </div></a>
                 <a style="opacity: 0;" href=""><div class='question-controller' id='next-question-controller'>
                     <span>Next</span>
                 </div></a>
+                @endif
             @endif
         </div>
     

@@ -1,5 +1,4 @@
-
-@if(!Auth::user())
+@if(!Auth::user() || !Auth::user()->isVerified())
 <div class="menu">
     <div class="logo-container">
         <a href="/"><img src="{{ asset('/assets/images/AppinionLogotip.svg') }}"></a>
@@ -17,8 +16,7 @@
         <img id="store-img" src="{{ asset('/assets/images/Google_Play_Store_badge_EN.svg') }}">
     </div>
 </div>
-@endif
-@if(Auth::user())
+@else
 <div class="menu">
     <div class="logo-container">
         <a href="/"><img src="{{ asset('/assets/images/AppinionLogotip.svg') }}"></a>

@@ -65,7 +65,7 @@
                                 </div>
                                 <div class='form-input-container'>
                                     <label>Edit password: </label>
-                                    <input type='password' name='password' value='{{Auth::User()->password}}'><br>
+                                    <input type='password' name='password'><br>
                                 </div>
                             </div>
                         </div>

@@ -68,19 +68,30 @@
                             </div>
                         </div>
                         <div class="pitanje-content-container">
-                            <p class="pitanje-class" id='pitanje-{{ $pitanja->id }}'>{{ $pitanja->pitanje }} </p> 
+                            <p class="pitanje-class" id='pitanje-{{ $pitanja->id }}'>{{ $pitanja->pitanje }}</p> 
                             <div class='horizontal-grey-line' style="margin-bottom: 30px"></div>              
-                            <p class="pitanje-class" id='odgovor1-{{ $pitanja->id }}'>{{ $pitanja->odgovor1  }} </p>
+                            <p class="pitanje-class" id='odgovor1-{{ $pitanja->id }}'>{{$pitanja->odgovor1}}</p>
                             <div class='horizontal-grey-line'></div>  
-                            <p class="pitanje-class" id='odgovor2-{{ $pitanja->id }}'>{{ $pitanja->odgovor2  }} </p>
-                            @if($pitanja->odgovor3 != null)
-                                <div class='horizontal-grey-line'></div>  
-                                <p class="pitanje-class" id='odgovor3-{{ $pitanja->id }}'>{{ $pitanja->odgovor3  }} </p>
+                            <p class="pitanje-class" id='odgovor2-{{ $pitanja->id }}'>{{$pitanja->odgovor2}}</p>
+                            @if($pitanja->odgovor3)
+                            <div class='horizontal-grey-line'></div>                 
                             @endif
-                            @if($pitanja->odgovor4 != null)
-                                <div class='horizontal-grey-line'></div>  
-                                <p class="pitanje-class" id='odgovor4-{{ $pitanja->id }}'>{{ $pitanja->odgovor4  }} </p>
+                            <p class="pitanje-class" id='odgovor3-{{ $pitanja->id }}'>{{$pitanja->odgovor3}}</p>
+                            @if($pitanja->odgovor4)
+                            <div class='horizontal-grey-line'></div>         
                             @endif
+                            <p class="pitanje-class" id='odgovor4-{{ $pitanja->id }}'>{{$pitanja->odgovor4}}</p>
+                            <div class='add-answer-hidden'>
+                                <button onclick="addAnswers({{$pitanja->id}})">Dodaj odgovore</button>
+                            </div>
+                            <div class='add-answer-input-container-hidden'>
+                                <div class='odgovor-3-class' id='add-answer-3-{{$pitanja->id}}-container'>
+                                    <input type="text" placeholder="Dodaj odgovor 3" id='odgovor-3-{{ $pitanja->id }}-input' onkeyup='changedInputFor3({{$pitanja->id}})'>
+                                </div>
+                                <div class='odgovor-4-class' id='add-answer-4-{{$pitanja->id}}-container'>
+                                    <input type="text" placeholder="Dodaj odgovor 4" id='odgovor-4-{{ $pitanja->id }}-input' onkeyup='changedInputFor4({{$pitanja->id}})'>
+                                </div>
+                            </div>
                         </div>
                         <div class="pitanja-buttons-container">
                             <span><a onclick='changeQuestion({{$pitanja->id}})'><img id='button-icons' src="{{ asset('/assets/images/prezentacija/spremi.svg') }}"><p class='' id='pitanje-btn-{{ $pitanja->id }}'>Promijeni</p></a></span>
@@ -150,102 +161,149 @@
     </script>
 
     <script>
-                function changeQuestion(id){
-                var btn = document.getElementById('pitanje-btn-' + id);
-                var pitanje = document.getElementById('pitanje-' + id);
-                var odg1 = document.getElementById('odgovor1-' + id);
-                var odg2 = document.getElementById('odgovor2-' + id);
-                if(document.getElementById('odgovor3-' + id) != " ")
-                    var odg3 = document.getElementById('odgovor3-' + id);
-                if(document.getElementById('odgovor4-' + id) != " ")
-                    var odg4 = document.getElementById('odgovor4-' + id);
+                
+        function changeQuestion(id){
+        var btn = document.getElementById('pitanje-btn-' + id);
+        var pitanje = document.getElementById('pitanje-' + id);
+        var odg1 = document.getElementById('odgovor1-' + id);
+        var odg2 = document.getElementById('odgovor2-' + id);
+        var odg3 = document.getElementById('odgovor3-' + id);
+        var odg4 = document.getElementById('odgovor4-' + id);
 
-                if(btn.innerHTML == 'Promijeni'){
-                    btn.innerHTML = 'Spasi';
-                    pitanje.setAttribute('contenteditable', 'true');
-                    odg1.setAttribute('contenteditable', 'true');
-                    odg2.setAttribute('contenteditable', 'true');
-                    if(document.getElementById('odgovor3-' + id) != null)
-                        odg3.setAttribute('contenteditable', 'true');
-                    if(document.getElementById('odgovor4-' + id) != null)
-                        odg4.setAttribute('contenteditable', 'true');
+
+        if(btn.innerHTML == 'Promijeni'){
+            btn.innerHTML = 'Spasi';
+            pitanje.setAttribute('contenteditable', 'true');
+            odg1.setAttribute('contenteditable', 'true');
+            odg2.setAttribute('contenteditable', 'true');
+            odg3.setAttribute('contenteditable', 'true');
+            odg4.setAttribute('contenteditable', 'true');
+
+            if(odg3.innerHTML == "" || odg4.innerHTML == ""){
+                document.getElementsByClassName('add-answer-hidden')[0].classList.add('add-answer-show');
+                document.getElementsByClassName('add-answer-hidden')[0].classList.remove('add-answer-hidden');  
+            }
+
+        }
+        else{
+            btn.innerHTML = 'Promijeni';
+            pitanje.setAttribute('contenteditable', 'false');
+            odg1.setAttribute('contenteditable', 'false');
+            odg2.setAttribute('contenteditable', 'false');
+            odg3.setAttribute('contenteditable', 'false');
+            odg4.setAttribute('contenteditable', 'false');
+
+            if(document.getElementsByClassName('add-answer-show')[0]){
+                document.getElementsByClassName('add-answer-show')[0].classList.add('add-answer-hidden');
+                document.getElementsByClassName('add-answer-show')[0].classList.remove('add-answer-show');
+            }
+
+            document.getElementById('add-answer-3-'+id+'-container').style.display = 'none';
+            if(document.getElementById('add-answer-4-'+id+'-container') != null){
+                document.getElementById('add-answer-4-'+id+'-container').style.display = 'none';
                 }
-                else{
-                    btn.innerHTML = 'Promijeni';
-                    pitanje.setAttribute('contenteditable', 'false');
-                    odg1.setAttribute('contenteditable', 'false');
-                    odg2.setAttribute('contenteditable', 'false');
-                    if(document.getElementById('odgovor3-' + id) != null)
-                        odg3.setAttribute('contenteditable', 'false');
-                    if(document.getElementById('odgovor4-' + id) != null)
-                        odg4.setAttribute('contenteditable', 'false');
-
-                        if(odg3 != null && odg4 != null){
-                            console.log('4');
-                            $.ajaxSetup({
-                                headers: {
-                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                    }
-                                });
-                            $.ajax({
-                                type:'POST',
-                                url:"/editQuestion",
-                                data:{
-                                    'id': id,
-                                    'pitanje': pitanje.innerHTML,
-                                    'odg1': odg1.innerHTML,
-                                    'odg2': odg2.innerHTML,
-                                    'odg3': odg3.innerHTML,
-                                    'odg4': odg4.innerHTML,
-                                },
-                                success: function(data) {
-                                    $(pitanje).text(data.msg);
-                                }
-                            });
-                        } else if(odg3 != null && odg4 == null){
-                            console.log('3');
-                            $.ajaxSetup({
-                                headers: {
-                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                    }
-                                });
-                            $.ajax({
-                                type:'POST',
-                                url:"/editQuestion",
-                                data:{
-                                    'id': id,
-                                    'pitanje': pitanje.innerHTML,
-                                    'odg1': odg1.innerHTML,
-                                    'odg2': odg2.innerHTML,
-                                    'odg3': odg3.innerHTML,
-                                },
-                                success: function(data) {
-                                    $(pitanje).text(data.msg);
-                                }
-                            });
-                        } else if(odg3 == null && odg4 == null){
-                            console.log('2');
-                            $.ajaxSetup({
-                                headers: {
-                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                    }
-                                });
-                            $.ajax({
-                                type:'POST',
-                                url:"/editQuestion",
-                                data:{
-                                    'id': id,
-                                    'pitanje': pitanje.innerHTML,
-                                    'odg1': odg1.innerHTML,
-                                    'odg2': odg2.innerHTML,
-                                },
-                                success: function(data) {
-                                    $(pitanje).text(data.msg);
-                                }
-                            });
-                            
+                
+                if(odg3.innerHTML != "" && odg4.innerHTML != ""){
+                    console.log(4);
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            }
+                        });
+                    $.ajax({
+                        type:'POST',
+                        url:"/editQuestion",
+                        data:{
+                            'id': id,
+                            'pitanje': pitanje.innerHTML,
+                            'odg1': odg1.innerHTML,
+                            'odg2': odg2.innerHTML,
+                            'odg3': odg3.innerHTML,
+                            'odg4': odg4.innerHTML,
+                        },
+                        success: function(data) {
+                            $(pitanje).text(data.msg);
                         }
+                    });
+                } else if(odg3.innerHTML != "" && odg4.innerHTML == ""){
+                    console.log(3);
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            }
+                        });
+                    $.ajax({
+                        type:'POST',
+                        url:"/editQuestion",
+                        data:{
+                            'id': id,
+                            'pitanje': pitanje.innerHTML,
+                            'odg1': odg1.innerHTML,
+                            'odg2': odg2.innerHTML,
+                            'odg3': odg3.innerHTML,
+                        },
+                        success: function(data) {
+                            $(pitanje).text(data.msg);
                         }
+                    });
+                } else if(odg3.innerHTML == "" && odg4.innerHTML == ""){
+                    console.log(2);
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            }
+                        });
+                    $.ajax({
+                        type:'POST',
+                        url:"/editQuestion",
+                        data:{
+                            'id': id,
+                            'pitanje': pitanje.innerHTML,
+                            'odg1': odg1.innerHTML,
+                            'odg2': odg2.innerHTML,
+                        },
+                        success: function(data) {
+                            $(pitanje).text(data.msg);
+                        }
+                    });
+                    
                     }
-                </script>
+                    
+                    location.reload();
+                }
+            }
+    
+        function addAnswers(id){
+            if(document.getElementById('odgovor3-' + id).innerHTML==""){
+                document.getElementById('add-answer-3-'+id+'-container').style.display = 'block';
+            }
+            else{
+                if(document.getElementById('odgovor4-' + id).innerHTML == ""){
+                    document.getElementById('add-answer-4-'+id+'-container').style.display = 'block';
+                }
+            }
+        }
+
+        function changedInputFor3(id){
+            //console.log(document.getElementById('odgovor-3-'+id+'-input').value)
+            if(document.getElementById('odgovor-3-'+id+'-input').value != ''){
+                document.getElementById('add-answer-4-'+id+'-container').style.display = 'block';
+
+                var odg3 = document.getElementById('odgovor3-' + id);
+                odg3.innerHTML = document.getElementById('odgovor-3-'+id+'-input').value;
+                odg3.style.display='none';
+            }
+            else{
+                document.getElementById('add-answer-4-'+id+'-container').style.display = 'none';
+
+            }
+        }
+
+        function changedInputFor4(id){
+            var odg4 = document.getElementById('odgovor4-' + id);
+            odg4.innerHTML = document.getElementById('odgovor-4-'+id+'-input').value;
+            odg4.style.display='none';
+        }
+    
+    </script>
 </html>
