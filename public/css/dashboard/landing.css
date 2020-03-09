@@ -20,6 +20,9 @@ body{
     max-width: 1440px;
     margin: 0 auto;
 
+    margin-left: 10%;
+    margin-right: 10%;
+
 }
 
 #content-wrap{
@@ -90,6 +93,8 @@ button{
     border-radius: 20px;
 
     outline:none;
+
+    margin-right: 20px;
 }
 
 #reg-button{
@@ -225,6 +230,8 @@ button{
 
 #o-nama-quotes-container{
     margin-top: 40px;
+
+    text-align: center;
 }
 
 .o-nama-quote-box-image{
@@ -408,4 +415,125 @@ button{
     color: #fff;
 
     outline: none;
+}
+
+/* 
+Media Queries Mobile
+*/
+
+@media only screen and (min-width: 320px) and (max-width: 414px){
+
+    body{
+
+        background-size: 300%;
+        background-repeat: no-repeat;
+
+    }
+
+    #page-container{
+        width: 90%;
+
+        margin: 0 auto;
+    }
+
+    #top-content-container #top-images-container{
+        display: none;
+    }
+
+    #top-content-container{
+        margin-top: 0;
+    }
+
+    #buttons-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    #buttons-container button{
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    #pogodnosti-container{
+        margin-top: 150px;
+        flex-wrap: nowrap;
+
+        width: 80%;
+    }
+
+    #pogodnosti-cards-container{
+        flex-direction: column;
+    }
+
+    .pogodnosti-card-class{
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 50px;
+
+    }
+
+    #o-nama-container{
+        margin-top: 50px;
+    }
+
+    #o-nama-background-image{
+        left: -85%;
+        width: 100%;
+    }
+
+    #o-nama-title-container{
+        text-align: center;
+    }
+
+    .quote-content-container{
+        background-image: none;
+    }
+
+    .quote-content-container .vl{
+        display: none;
+    }
+
+    .quote-content-container img{
+        display: none;
+    }
+
+    .o-nama-quotes-container-class{
+        width: 100%;
+        margin: 0 auto !important;
+    }
+
+    .quote-content-container{
+        width: 100% !important;
+        height: auto;
+    }
+
+    .quote-content-container p{
+        width: 100% !important;
+    }
+
+    .quote-content-text{
+        flex-basis: auto;
+    }
+
+    #preuzimanje-container{
+        margin: 0 auto;
+        margin-top: 50px;
+        width: 100%;
+    }
+
+    #preuzimanje-google-content-container{
+        width: 100%;
+    }
+
+    #preuzimanje-google-content-container img{
+        display: none;
+    }
+    
+    #form-kontakt-class{
+        width: 100%;
+    }
+
 }

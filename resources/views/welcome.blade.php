@@ -33,9 +33,9 @@
         <header>
             @include('layouts.header')
         </header>
-        @if(!Auth::user())
         <div id="page-container">
             <div id="content-wrap">
+                @if(!Auth::user())
                 <div id="top-container">
                     <div id="top-content-container">
                         <!--<div id="auth-container"></div>-->
@@ -174,8 +174,8 @@
                             <h2>Preuzimanje</h2>
                         </div>
                     </div>
-                    <div id="o-nama-content-container">
-                        <div id="o-nama-text-container">
+                    <div id="preuzimanje-content-container">
+                        <div id="preuzimanje-text-container">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
                         <div id="preuzimanje-google-content-container">

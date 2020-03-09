@@ -410,3 +410,70 @@ a:hover{
     background-color: #E94C55;
     color: #ffffff;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 414px){
+
+    #grey-line{
+        display: none;
+    }
+
+    #naslov-prezentacije{
+        padding-inline-start: 20px;
+        padding-inline-end: 20px;
+        margin: 0 auto;
+    }
+    #naslov-prezentacije div{
+        height: 100px;
+        margin-left: 20px;
+    }
+    
+    #kljuc-container img{
+        display: none;
+    }
+
+    #delete-presentation-container{
+        margin-right: 0;
+        height: auto !important;
+        margin-left: -40px !important;
+    }
+
+    .question-group #submit{
+        margin-left: 20px;
+        margin-right: 0 !important;
+    }
+    
+    .question-group a{
+        margin-right: 20px;
+    }
+
+    #dodaj-pitanje-container{
+        width: 100%;
+    }
+    
+    .pitanje-hidden-container{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .pitanje-title-container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .pitanje-content-container{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .pitanja-buttons-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pitanja-buttons-container a{
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+
+}

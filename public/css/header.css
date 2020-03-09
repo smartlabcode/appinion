@@ -24,6 +24,10 @@
     align-items: center;
 }
 
+.menu-container .icon{
+    display: none;
+}
+
 .menu-element{
 
     margin-left: 20px;
@@ -157,3 +161,4 @@ a{
 
     justify-content: space-evenly;
 }
+
