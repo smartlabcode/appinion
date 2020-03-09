@@ -20,12 +20,21 @@
                 <span id="{{ $prezentacija->gen_kod }}">{{ $prezentacija->gen_kod }}</span>
             </div>
 
-            <div class="prezentacija-element-div">
+            @if($data['pitanja'][0]->all() != null)<div class="prezentacija-element-div">
                 <a href='/pitanje/{{$prezentacija->gen_kod}}' ><div class="prezentacija-btn">
                     <img src="{{ asset('/assets/images/app/run.svg') }}">
                     <p>Pokreni prezentaciju</p>
                 </div></a>
             </div>
+
+            @else<div class="prezentacija-element-div">
+                <a><div class="prezentacija-btn-locked">
+                    <div class="popup">Prezentacija nema pitanja</div>
+                    <img src="{{ asset('/assets/images/app/run.svg') }}">
+                    <p>Pokreni prezentaciju</p>
+                </div></a>
+            </div>
+            @endif
 
             <div class="prezentacija-element-div">
                 <a href='/presentation/{{$prezentacija->gen_kod}}' ><div class="prezentacija-btn">

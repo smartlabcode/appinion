@@ -88,6 +88,8 @@ button{
     border: none;
 
     border-radius: 20px;
+
+    outline:none;
 }
 
 #reg-button{
@@ -404,4 +406,6 @@ button{
     border-radius: 20px;
     background-color: #E94C55;
     color: #fff;
+
+    outline: none;
 }

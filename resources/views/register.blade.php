@@ -50,10 +50,13 @@
                 <input type='email' class='form-control' id='email' name='email' placeholder="Email" required></input>
             </div>
             <div class='form-group'>
-                <input type='password' class='form-control' id='password' name='password' placeholder="Password" required></input>
+                <input type='password' class='form-control' id='password' name='password' placeholder="Password" onkeyup="checkMatchingPasswords()" required></input>
             </div>
             <div class='form-group'>
-                <input type='password' class='form-control' id='confirm_password' name='confirm_password' placeholder="Potvrdi password" required></input>
+                <input type='password' class='form-control' id='confirm_password' name='confirm_password' placeholder="Potvrdi password" onkeyup="checkMatchingPasswords()" required></input>
+            </div>
+            <div class='form-group confirm-warning-container'>
+                <span>Passwordi se ne podudaraju</span>
             </div>
             <div class='form-group'>
                 <input type='submit' class='form-control' id='submit' name='submit' value="Registruj se"></input>
@@ -64,5 +67,21 @@
     </body>
 
     <footer>@include('layouts.footer')</footer>
+    <script>
+
+        function checkMatchingPasswords(){
+            var password = document.getElementById('password').value;
+            var confirm_password = document.getElementById('confirm_password').value;
+
+            if(password != confirm_password){
+                document.getElementsByClassName('confirm-warning-container')[0].classList.add('confrim-warning-container-show');
+                document.getElementsByClassName('confirm-warning-container')[0].classList.remove('confirm-warning-container');
+            }else{
+                document.getElementsByClassName('confrim-warning-container-show')[0].classList.add('confirm-warning-container');
+                document.getElementsByClassName('confrim-warning-container-show')[0].classList.remove('confrim-warning-container-show');
+            }
+        }
+
+    </script>
 
 </html>

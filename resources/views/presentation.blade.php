@@ -68,7 +68,7 @@
                             </div>
                         </div>
                         <div class="pitanje-content-container">
-                            <p class="pitanje-class" id='pitanje-{{ $pitanja->id }}'>{{ $pitanja->pitanje }}</p> 
+                            <h3 class="pitanje-class pitanje-text" id='pitanje-{{ $pitanja->id }}'>{{ $pitanja->pitanje }}</h3> 
                             <div class='horizontal-grey-line' style="margin-bottom: 30px"></div>              
                             <p class="pitanje-class" id='odgovor1-{{ $pitanja->id }}'>{{$pitanja->odgovor1}}</p>
                             <div class='horizontal-grey-line'></div>  

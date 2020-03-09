@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use DB;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -89,6 +90,7 @@ class RegisterController extends Controller
 
         $user->sendEmailVerificationNotification();
 
+        Auth::login($user);
 
         return redirect('/');
     }

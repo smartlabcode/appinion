@@ -142,6 +142,7 @@ opacity */
     border-radius: 25px;
 
     border: 2px solid #4C3056;
+    outline: none;
 }
 
 #edit-contaier label{
@@ -207,6 +208,7 @@ opacity */
     background-color: #E94C55;
     color: #ffffff;
     border:none;
+    outline: none;
 
     cursor: pointer;
 }

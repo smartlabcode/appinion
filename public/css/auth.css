@@ -56,17 +56,19 @@ header{
     border: none;
     border-bottom: 1px solid #fff;
     margin-top: 30px;
-    transition: ease-in, 1s;
+    transition: ease-in, .3s;
 
     font-size: 14pt;
     color: #fff;
+
+    outline: none;
 }
 
 .form-control:hover{
     font-size: 16pt;
     height: 45px;
 
-    transition: linear, 1s;
+    transition: linear, .3s;
 }
 
 #auth-title-container{
@@ -129,4 +131,18 @@ header{
 
 .login-form-container{
     margin-bottom: 14rem;
+}
+
+.confirm-warning-container{
+    color: red;
+    font-size: 14pt;
+    margin-top: 30px;
+    display: none;
+}
+
+.confrim-warning-container-show{
+    display: flex;
+    color: red;
+    font-size: 14pt;
+    margin-top: 30px;
 }

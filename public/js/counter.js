@@ -55,7 +55,7 @@ function onTimesUp() {
 
     setTimeout(() => {
       setTableVisible();
-    }, 1000);
+    }, 3000);
 
     
 }
