@@ -160,8 +160,6 @@ function myFunction() {
         width: 100%;
     }
 
-    
-
     .menu-container{
         display:none;
     }

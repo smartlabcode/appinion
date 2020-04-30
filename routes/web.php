@@ -87,9 +87,10 @@ Route::get('/questiondelete/{presentationid}/{emailkorisnika}/{idpitanja}', 'Que
 //Set question visible to false
 Route::post('/setquestiontofalse', 'ShowQuestionController@setQuestionsToFalse')->middleware(Redirect::class)->middleware('verified');
 
-//Android serverside
-Route::post('/getandroidquestion', 'AndroidController@getQuestion');
+//Mobile serverside
 Route::post('/getandroidresponse', 'AndroidController@getAnswer');
 Route::post('/registerandroiduser', 'AndroidController@registerUser');
 Route::post('/joinpresentation', 'AndroidController@joinPresentation');
 Route::post('/checkforanswers', 'AndroidController@checkForAnswers');
+
+//Office serverside

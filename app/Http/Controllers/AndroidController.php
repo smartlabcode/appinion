@@ -8,18 +8,23 @@ use DB;
 
 class AndroidController extends Controller
 {
+    public function checkUserAnswers($userid){
+
+    }
+
+
     public function getAnswer(Request $request){
 
         $answer = $request->all();
 
         $id_prezentacije = $request->id_prezentacije;
         $id_pitanja = intval($request->id_pitanja);
-        $email = $request->email;
+        $userID = $request->userid;
         $odg = $request->odg;
 
 
-        $userID = DB::table('presentation_users')->where('email', $email)->get();
-        $userID = $userID[0]->id;
+        //$userID = DB::table('presentation_users')->where('email', $email)->get();
+        //$userID = $userID[0]->id;
 
         //dd($id_prezentacije, $id_pitanja, $userID, $odg);
         
@@ -41,31 +46,32 @@ class AndroidController extends Controller
             );
 
         return \response()
-            ->json(["Message:" => "Vase pitanje je prihvaceno", "Status_code"=> 200]);
+            ->json(["Message:" => "Vase odgovor je prihvacen", "Status_code"=> 200]);
 
     }
 
     public function checkForAnswers(Request $request){
 
+        $i = 2;
         //$userid = DB::table('presentation_users')->where('email', $request->email)->get();
 
+        if(DB::table('pitanja')->where('id_prezentacije', $request->id)->where('vidljivo', true)->pluck('odgovor3')[0] !=' ')
+            $i = 3;
+        if(DB::table('pitanja')->where('id_prezentacije', $request->id)->where('vidljivo', true)->pluck('odgovor4')[0] !=' ')
+            $i = 4;
+        
+
         $pitanja = DB::table('pitanja')->where('id_prezentacije', $request->id)->get();
+
         foreach($pitanja as $pitanje){
             if($pitanje->vidljivo == true){
                 return \response()
-                    ->json(["Vidljivo:" => 1, "id_pitanja"=>$pitanje->id, "presentatioNID"=>$request->id, "Pitanje"=>$pitanje->pitanje]);
+                    ->json(["Vidljivo:" => 1, "id_pitanja"=>$pitanje->id, "presentatioNID"=>$request->id, "Pitanje"=>$pitanje->pitanje, "Broj_odgovora"=>$i]);
             }
         }
 
         return \response()
             ->json(["Vidljivo:" => 0, "id_pitanja" => 0, "presentatioNID"=>$request->id]);
-
-    }
-
-    public function getQuestion(Request $request)
-    {
-
-        return \response($request);
 
     }
 
@@ -116,8 +122,10 @@ class AndroidController extends Controller
 
             if($request->id == $id){
 
+                $imeprezentacije = DB::table('prezentacije')->where('gen_kod', $id)->pluck('ime_prezentacije')[0];
+
                 return \response()
-                    ->json(["Message:" => "Pridruzili ste se prezentaciji ".$presentacija->ime_prezentacije, "StatusCode:" => 200, "presentatioNID" => $request->id]);
+                    ->json(["Message:" => "Pridruzili ste se prezentaciji ".$imeprezentacije, "StatusCode:" => 200, "presentatioNID" => $request->id]);
             }
         }
 
