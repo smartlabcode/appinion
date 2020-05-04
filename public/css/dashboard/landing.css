@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+  }
+
 body{
     background-image: url('../../assets/images/background-images/bg.svg');
     background-position-y: -100px;
