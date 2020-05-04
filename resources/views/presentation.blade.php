@@ -18,6 +18,9 @@
 
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Favicon -->
+        <link rel = "icon" href = "{{ asset('/assets/images/AppinionLogo.svg') }}" type = "image/x-icon"> 
         
 </head>
 <body>
