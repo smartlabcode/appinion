@@ -6,7 +6,7 @@
     flex-wrap: wrap;
 
     justify-content: space-evenly;
-    align-items: center;
+    align-items: baseline;
 
     width: 90%;
 
@@ -26,7 +26,8 @@
 }
 
 #footer-logo{
-    width: 100%;
+    margin-top: 20px;
+    width: 40%;
 }
 
 .footer-header{
@@ -36,8 +37,36 @@
 
 .footer-small-text{
     color: #4C3056;
+    font-size: 10pt;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
 }
 
-.footer-small-text{
+.footer-link{
+    text-decoration: none;
+}
+
+#footer-logo-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.rights-class{
     font-size: 10pt;
+    color: #4C3056;
+    border-top: 1px solid #D9D9D9;
+
+    display: flex;
+    justify-content: center;
+}
+
+.footer-icons{
+    width: 12px !important;
+    max-width: 12px !important;
+    margin-right: 20px;
+    margin-top: 10px;
 }

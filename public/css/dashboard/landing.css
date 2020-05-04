@@ -392,7 +392,7 @@ button{
     border: none;
     border-bottom: 1px solid #fff;
     margin-top: 30px;
-    transition: ease-in, 1s;
+    transition: ease-in, .3s;
 
     font-size: 14pt;
     color: #fff;
@@ -402,7 +402,7 @@ button{
     font-size: 16pt;
     height: 45px;
 
-    transition: linear, 1s;
+    transition: linear, .3s;
 }
 
 #input-kontakt-button{
