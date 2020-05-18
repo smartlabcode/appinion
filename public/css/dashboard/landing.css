@@ -234,8 +234,6 @@ button{
 
 #o-nama-quotes-container{
     margin-top: 40px;
-
-    text-align: center;
 }
 
 .o-nama-quote-box-image{
@@ -243,8 +241,10 @@ button{
 }
 
 .vl {
-  border-left: 6px solid #D9D9D9;
-  height: 152px;
+  border-left: 1px solid #D9D9D9;
+  height: 90px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .quote-content-container{
@@ -258,7 +258,8 @@ button{
     background-image: url('../../assets/images/body/o-nama/Union1.svg');
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 240px;
+    height: 270px;
+    padding: 10px;
 }
 
 #o-nama-quote-two{

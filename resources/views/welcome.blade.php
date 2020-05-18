@@ -45,7 +45,7 @@
                         <div id="title-buttons-container">
                             <div id="title-container">
                                 <h1>Jednim klikom poveži se sa publikom</h1>
-                                <h4>Lorem ipsum ist est</h4>
+                                <h4>Isprobajte novi način uključivanja publike u prezentaciju putem Appinion aplikacije.</h4>
                             </div>
                             <div id="buttons-container">
                                 <button class="auth-button" id="reg-button" onclick="window.location.href = '/registracija';">Registracija</button>
@@ -132,7 +132,7 @@
                     </div>
                     <div id="o-nama-content-container">
                         <div id="o-nama-text-container">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Mnogo je zadovoljnih korisnika Appinion aplikacije. <br> Isprobajte i vi Appinion i pošaljite nam vaše iskustvo, mi ćemo ga vrlo rado objaviti.</p>
                         </div>
                         <div id="o-nama-quotes-container">
                             <div class="o-nama-quotes-container-class" id="o-nama-quote-one">
@@ -140,8 +140,8 @@
                                     <img class="o-nama-single-quote-image" src="{{ asset('/assets/images/body/o-nama/Group287.svg') }}">
                                     <div class="vl"></div>
                                     <div class="quote-content-text">
-                                        <h5>Lorem ipsum dolor</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        <h5>Mirza Ahmetović</h5>
+                                        <p>Jako mi je važno da moja publika aktivno učestvuje u onome što predajem. Probao sam sa aplikacijom Appinion i jako sam zadovoljan.</p>
                                     </div>
                                 </div>
                             </div>
@@ -150,8 +150,8 @@
                                     <img class="o-nama-single-quote-image" src="{{ asset('/assets/images/body/o-nama/Group287.svg') }}">
                                     <div class="vl"></div>
                                     <div class="quote-content-text">
-                                        <h5>Lorem ipsum dolor</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        <h5>Lamija Turković</h5>
+                                        <p>Povezivanjem ljudi i njihovim angažmanom ostvarujemo najbolje rezultate u edukaciji. Zato je ova aplikacija korisna.</p>
                                     </div>
                                 </div>
                             </div>
@@ -160,8 +160,8 @@
                                     <img class="o-nama-single-quote-image" src="{{ asset('/assets/images/body/o-nama/Group287.svg') }}">
                                     <div class="vl"></div>
                                     <div class="quote-content-text">
-                                        <h5>Lorem ipsum dolor</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        <h5>Asim Kučuk</h5>
+                                        <p>Sviđa mi se jednostavnost i što su rezultati "real-time". Ljudima se to dopada i svi rado učestvuju. Meni je njihov feedback koristan.</p>
                                     </div>
                                 </div>
                             </div>
@@ -179,7 +179,7 @@
                     </div>
                     <div id="preuzimanje-content-container">
                         <div id="preuzimanje-text-container">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Preuzmite Appinion putem Google Play platforme.</p>
                         </div>
                         <div id="preuzimanje-google-content-container">
                             <img id="preuzimanje-title-image" src="{{ asset('/assets/images/body/preuzimanje/Google_Play.svg') }}">

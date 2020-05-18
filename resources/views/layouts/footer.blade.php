@@ -2,7 +2,7 @@
 
     <div class="footer-column" id="column-one">
         <div id="column-one-text-container">
-            <p class="footer-small-text" id="column-one-text"> Sva prava zadržana. Nijedan dio ove publikacije ne smije se reprodukovati, prenositi, prepisivati, pohraniti u kakvom pretražnom sistemu niti prevoditi na bilo koji jezik, u bilo kojem obliku ili na bilo koji način, bez pismene dozvole Webinar.ba. </p>
+            <p class="footer-small-text" id="column-one-text"> Sva prava zadržana. Nijedan dio ove publikacije ne smije se reprodukovati, prenositi, prepisivati, pohraniti u kakvom pretražnom sistemu niti prevoditi na bilo koji jezik, u bilo kojem obliku ili na bilo koji način, bez pismene dozvole Appinion.ba. </p>
         </div>
         <div id="footer-logo-container">
             <img id="footer-logo" src="{{ asset('/assets/images/footer/footer-logotip.svg') }}">
