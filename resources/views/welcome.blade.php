@@ -49,7 +49,7 @@
                             </div>
                             <div id="buttons-container">
                                 <button class="auth-button" id="reg-button" onclick="window.location.href = '/registracija';">Registracija</button>
-                                <button class="auth-button" id="log-button" onclick="window.location.href = '/prijava';">Login</button>
+                                <button class="auth-button" id="log-button" onclick="window.location.href = '/prijava';">Prijava</button>
                             </div>
                         </div>
                         <div id="top-images-container">
@@ -75,7 +75,7 @@
 
                     <div id="pogodnosti-content-container">
                         <div id="pogodnosti-text-container">
-                            <p>Želite veću uključenost svoje publike u prezentaciju? Želite da zadržite njihovu pažnju? <br> Appionion je aplikacija koja će vam pomoći u tome! Kreirajte pitanja i u željenom trenutko dozvolite publici da odgovara na njih. Grafički prikaz grupnih rezultata će biti vidljiv odmah na platnu.</p>
+                            <p>Želite veću uključenost svoje publike u prezentaciju? Želite da zadržite njihovu pažnju? <br> Appionion je aplikacija koja će vam pomoći u tome! Kreirajte pitanja i u željenom trenutku dozvolite publici da odgovara na njih. Grafički prikaz grupnih rezultata će biti vidljiv odmah na platnu.</p>
                         </div>
 
                         <div id="pogodnosti-cards-container">
@@ -111,7 +111,7 @@
                                     <h3>Pažnja</h3>
                                 </div>
                                 <div class="pogodnosti-card-text-container">
-                                    <p>Umjerite pažnju auditorija na željene teme i ispitajte njihovo mišljenje i znanje.</p>
+                                    <p>Usmjerite pažnju auditorija na željene teme i ispitajte njihovo mišljenje i znanje.</p>
                                 </div>
                             </div>
 
@@ -183,7 +183,7 @@
                         </div>
                         <div id="preuzimanje-google-content-container">
                             <img id="preuzimanje-title-image" src="{{ asset('/assets/images/body/preuzimanje/Google_Play.svg') }}">
-                            <button class="auth-button" id="download-button">Besplatan download</button>
+                            <button class="auth-button" id="download-button">Besplatano preuzimanje</button>
                         </div>
                     </div>
                 </div>

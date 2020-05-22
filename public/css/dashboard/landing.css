@@ -422,6 +422,35 @@ button{
     outline: none;
 }
 
+/*
+Laptop
+*/
+@media only screen and (min-width: 800px) and (max-width: 1280px){
+
+    #title-buttons-container{
+        width: 200%;
+    }
+
+    #top-substtraction{
+        width: 75%;
+    }
+
+    #pogodnosti-container{
+        margin-top: 200px;
+        width: 100%;
+    }
+
+    #o-nama-container{
+        width: 100%;
+    }
+
+    .quote-content-container{
+        height: 250px;
+        padding: 0;
+    }
+
+}
+
 /* 
 Media Queries Mobile
 */

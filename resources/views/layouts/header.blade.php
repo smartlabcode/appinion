@@ -11,7 +11,7 @@
         <div class="menu-element"><a class="header-link" href="/"><p>Naslovna</p></a></div>
         <div class="menu-element"><a class="header-link" href="/#pogodnosti-container"><p>Pogodnosti</p></a></div>
         <div class="menu-element"><a class="header-link" href="/#o-nama-container"><p>Šta drugi kažu</p></a></div>
-        <div class="menu-element"><a class="header-link" href="/#preuzimanje-container"><p>Downloads</p></a></div>
+        <div class="menu-element"><a class="header-link" href="/#preuzimanje-container"><p>Preuzimanje</p></a></div>
         <div class="menu-element"><a class="header-link" href="/#kontakt-container"><p>Kontakt</p></a></div>
     </div>
 
