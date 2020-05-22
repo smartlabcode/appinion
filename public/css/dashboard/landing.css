@@ -234,6 +234,9 @@ button{
 
 #o-nama-quotes-container{
     margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .o-nama-quote-box-image{
@@ -258,7 +261,8 @@ button{
     background-image: url('../../assets/images/body/o-nama/Union1.svg');
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 270px;
+    height: 200px;
+    width: 800px;
     padding: 10px;
 }
 
@@ -425,9 +429,10 @@ button{
 /*
 Laptop
 */
-@media only screen and (min-width: 800px) and (max-width: 1280px){
+@media only screen and (min-width: 786px) and (max-width: 1366px){
 
     #title-buttons-container{
+
         width: 200%;
     }
 
@@ -445,7 +450,8 @@ Laptop
     }
 
     .quote-content-container{
-        height: 250px;
+        height: 200px;
+        width: 800px;
         padding: 0;
     }
 
